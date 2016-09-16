@@ -1,0 +1,25 @@
+{
+    "name": "selfhigh-documenting",
+    "version": "0.1.0",
+    "description": "A light website using express for RESTFUL API documenting",
+    "author": "Lou (dananad@126.com)",
+    "dependencies": {
+        "express": "~2.0.0",
+        "redis": "~2.0.0"
+    }
+    /*,
+    "devDependencies": {
+    },
+    "main": "index",
+    "bin": {
+        "test": "./bin/test.js"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "test": "vows test/*.js",
+        "preinstall": "./configure",
+        "install": "make && make install"
+    },
+    "engines": {
+    }*/
+}
