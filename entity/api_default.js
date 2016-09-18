@@ -7,12 +7,14 @@
  * @param {[String]} returnSample [返回示例]
  * @param {[String]} comment      [备注]
  */
-function API(name, params, paramsSample, returnData, returnSample, comment) {
+function API(name, params, paramsSample, returnData, returnSample, comment, addDate, updates) {
   this.name = name
   this.params = params
   this.returnData = returnData
   this.returnSample = returnSample
   this.comment = comment
+  this.addDate = addDate
+  this.updates = updates
 }
 
 /**
