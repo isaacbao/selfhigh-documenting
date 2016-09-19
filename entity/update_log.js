@@ -5,7 +5,7 @@
  * @param {[String]} commments [更新的详细信息]
  * @param {[Array]} relatedAPIS   [这次更新涉及到的接口]
  */
-function API(date, operator, commments, relatedAPIS) {
+exports.UpdateLog = function (date, operator, commments, relatedAPIS) {
   this.date = date
   this.operator = operator
   this.commments = commments
