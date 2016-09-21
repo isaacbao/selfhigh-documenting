@@ -31,3 +31,15 @@ exports.Param = function (name, valueType, valueSample, valueScope) {
   this.valueSample = valueSample
   this.valueScope = valueScope
 }
+
+/**
+ * 接口的更新履历
+ * @param {[Date]} updateTime    [更新时间]
+ * @param {[String]} updateComment [更新内容]
+ * @param {[String]} apiName [接口名称]
+ */
+exports.Update = function (updateTime, updateComment, apiName) {
+  this.updateTime = updateTime
+  this.updateComment = updateComment
+  this.apiName = apiName
+}
