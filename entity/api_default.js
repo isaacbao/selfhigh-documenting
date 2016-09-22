@@ -6,8 +6,9 @@
  * @param {[String]} returnData   [返回的数据]
  * @param {[String]} returnSample [返回示例]
  * @param {[String]} comment      [备注]
+ * @param {[String]} group      [api所属的组]
  */
-exports.API = function (name, params, paramsSample, returnData, returnSample, comment, addDate, updates) {
+exports.API = function (name, params, paramsSample, returnData, returnSample, comment, addDate, updates, group) {
   this.name = name
   this.params = params
   this.returnData = returnData
@@ -15,6 +16,7 @@ exports.API = function (name, params, paramsSample, returnData, returnSample, co
   this.comment = comment
   this.addDate = addDate
   this.updates = updates
+  this.group = group
 }
 
 /**

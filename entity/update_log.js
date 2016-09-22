@@ -6,10 +6,10 @@
  * @param {[Array]} relatedAPIS   [这次更新涉及到的接口]
  * @param {[Array]} documentId   [该履历所属的文档]
  */
-exports.UpdateLog = function (date, operator, commments, relatedAPIS, documentId) {
+exports.UpdateLog = function (date, operator, commment, relatedAPI) {
   this.date = date
   this.operator = operator
-  this.commments = commments
-  this.relatedAPIS = relatedAPIS
-  this.documentId = documentId
+  this.commment = commment
+  this.relatedAPI = relatedAPI
+    // this.documentId = documentId
 }
