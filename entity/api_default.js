@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * [默认的接口文档格式]
  * @param {[String]} name         [接口名称，必填，非空]

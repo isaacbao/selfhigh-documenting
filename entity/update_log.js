@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * [更新履历]
  * @param {[Date]} date         [更新时间]

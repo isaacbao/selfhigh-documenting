@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * [一份API文档]
  * @param {[String]} documentId  [文档ID]

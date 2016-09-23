@@ -1,8 +1,10 @@
-var redis = require('redis')
-var assert = require('assert')
-var updateLog = require('update_log')
+'use strict'
 
-client.on('error', function (err) {
+const redis = require('redis')
+const assert = require('assert')
+const updateLog = require('update_log')
+
+client.on('error', (err) => {
   console.log('Error ' + err)
 })
 
@@ -10,7 +12,7 @@ client.on('error', function (err) {
  *
  */
 exports.addAPI = function (api, documentId) {
-  client.get(documentId, function (err, reply) {
+  client.get(documentId, (err, reply) => {
     if (document) {
       console.log(document)
       document.apis.add(api)
@@ -19,7 +21,7 @@ exports.addAPI = function (api, documentId) {
 }
 
 exports.getAPIByDocument = function (documentId) {
-  client.hgetall(documentId + 'API', function (err, document) {
+  client.hgetall(documentId + 'API', (err, document) => {
     if (document) {
       console.log(document)
     }
@@ -27,21 +29,21 @@ exports.getAPIByDocument = function (documentId) {
 }
 
 exports.getUpdateLogByDocument = function (documentId) {
-  client.hgetall(documentId + 'updateLog', function (err, reply) {
+  client.hgetall(documentId + 'updateLog', (err, reply) => {
     console.log(reply)
   })
 }
 
 function generateUpdateLog(api) {
   assert(Object.prototype.toString.call(api.updates).contain('Array'))
-  var updateComment = getLastComment(api)
-  var log = updateLog.UpdateLog(new Date(), api.operator, api.updates, api, api.documentId)
+  let updateComment = getLastComment(api)
+  let log = updateLog.UpdateLog(new Date(), api.operator, api.updates, api, api.documentId)
 }
 
 function getLastComment(api) {
-  var updates = api.updates
+  let updates = api.updates
   assert(Object.prototype.toString.call(api.updates).contain('Array'))
-  var lastUpdate = updates[0]
+  let lastUpdate = updates[0]
   for (update: updates) {
     if (lastUpdate.updateTime < update.updateTime) {
       lastUpdate = update
