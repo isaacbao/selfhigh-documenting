@@ -22,6 +22,37 @@ exports.addAPI = function (api, documentId) {
   })
 }
 
+/**
+ *
+ */
+exports.updateAPI = function (api, documentId) {
+  client.get(documentId, (err, reply) => {
+    if (document) {
+      console.log(document)
+      let apiIndex = getAPIIndexByName(api.name)
+      document.apis[apiIndex] = api
+      document.updateLogs.add(generateUpdateLog(api))
+      client.set(documentId, document)
+    }
+  })
+}
+
+exports.deleteAPI = function (api, documentId) {
+  client.get(documentId, (err, reply) => {
+    if (document) {
+      //TODO
+    }
+  })
+}
+
+function getAPIIndexByName(apis, apiName) {
+  apis.forEach(apiItem, index) {
+    if (apiItem.name == apiName) {
+      return index
+    }
+  }
+}
+
 exports.getDocument = function (documentId) {
   client.get(documentId, (err, document) => {
     if (document) {
