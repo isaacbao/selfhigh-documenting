@@ -16,12 +16,14 @@ exports.addAPI = function (api, documentId) {
     if (document) {
       console.log(document)
       document.apis.add(api)
+      document.updateLogs.add(generateUpdateLog(api))
+      client.set(documentId, document)
     }
   })
 }
 
-exports.getAPIByDocument = function (documentId) {
-  client.hgetall(documentId + 'API', (err, document) => {
+exports.getDocument = function (documentId) {
+  client.get(documentId, (err, document) => {
     if (document) {
       console.log(document)
     }
@@ -37,7 +39,7 @@ exports.getUpdateLogByDocument = function (documentId) {
 function generateUpdateLog(api) {
   assert(Object.prototype.toString.call(api.updates).contain('Array'))
   let updateComment = getLastComment(api)
-  let log = updateLog.UpdateLog(new Date(), api.operator, api.updates, api, api.documentId)
+  let log = updateLog.UpdateLog(new Date(), api.operator, updateComment, api)
 }
 
 function getLastComment(api) {
@@ -49,4 +51,5 @@ function getLastComment(api) {
       lastUpdate = update
     }
   }
+  return lastUpdate.commment
 }
