@@ -1,6 +1,6 @@
 'use strict'
 
-class UpdateLog {
+class ChangeLog {
   /**
    * [更新履历]
    * @param {[Date]} date         [更新时间]
@@ -17,4 +17,4 @@ class UpdateLog {
       // this.documentId = documentId
   }
 }
-exports.UpdateLog = UpdateLog
+exports.ChangeLog = ChangeLog

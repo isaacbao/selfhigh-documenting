@@ -47,10 +47,11 @@ class Update {
    * @param {[String]} updateComment [更新内容]
    * @param {[String]} apiName [接口名称]
    */
-  constructor(updateTime, updateComment, apiName) {
+  constructor(updateTime, updateComment, apiName, operator) {
     this.updateTime = updateTime
     this.updateComment = updateComment
     this.apiName = apiName
+    this.operator = operator
   }
 }
 

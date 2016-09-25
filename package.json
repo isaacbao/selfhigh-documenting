@@ -5,7 +5,8 @@
     "author": "Lou (dananad@126.com)",
     "dependencies": {
         "express": "~2.0.0",
-        "redis": "~2.0.0"
+        "redis": "~2.0.0",
+        "cheerio":"~0.22.0"
     },
     "license": "MIT",
     "repository" :  {
