@@ -10,8 +10,9 @@ class API {
    * @param {[String]} returnSample [返回示例]
    * @param {[String]} comment      [备注]
    * @param {[String]} group      [api所属的组]
+   * @param {[String]} url      [api地址]
    */
-  constructor(name, params, paramsSample, returnData, returnSample, comment, addDate, updates, group) {
+  constructor(name, params, paramsSample, returnData, returnSample, comment, addDate, updates, group, url) {
     this.name = name
     this.params = params
     this.returnData = returnData
@@ -20,6 +21,7 @@ class API {
     this.addDate = addDate
     this.updates = updates
     this.group = group
+    this.url = url
   }
 }
 
@@ -30,13 +32,14 @@ class Parameter {
    * @param  {[String]} valueType   [参数值的类型]
    * @param  {[String]} valueSample [参数示例]
    * @param  {[String]} valueScope  [参数值取值范围]
-   * @return {[type]}             [description]
+   * @param  {[String]} description [参数的说明]
    */
-  constructor(name, valueType, valueSample, valueScope) {
+  constructor(name, valueType, valueSample, valueScope, description) {
     this.name = name
     this.valueType = valueType
     this.valueSample = valueSample
     this.valueScope = valueScope
+    this.description = description
   }
 }
 

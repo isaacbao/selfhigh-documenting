@@ -1,0 +1,38 @@
+{
+ name:"获取特定用户所属企业的职位（for 行动流）",
+ params:[
+   {
+     name:"appId",
+     valueType:"String",
+     valueSample:"",
+     valueScope:"",
+     description:"行动流的appId"
+   },
+   {
+     name:"appSecret",
+     valueType:"String",
+     valueSample:"",
+     valueScope:",
+     description:"行动流的appSecret"
+   },
+   {
+     name:"cid",
+     valueType:"String",
+     valueSample:"",
+     valueScope:",
+     description:"要获取职位的用户的云通行证id"
+   },
+ ]
+ returnData:"",
+ returnSample:"",
+ comment:"",
+ addDate:"",
+ updates:[
+   {
+
+   }
+
+ ],
+ group:"",
+ url:""
+}
