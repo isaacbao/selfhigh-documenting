@@ -19,20 +19,22 @@
      name:"cid",
      valueType:"String",
      valueSample:"",
-     valueScope:",
+     valueScope:"",
      description:"要获取职位的用户的云通行证id"
    },
  ]
  returnData:"",
  returnSample:"",
- comment:"",
- addDate:"",
+ comment:"用于行动流获取职位",
+ addDate:"2016-09-27",
  updates:[
    {
-
+     updateTime: "2016-09-27"
+     updateComment: "新增接口"
+     operator : "陆荣扬"
    }
 
  ],
- group:"",
- url:""
+ group:"OpenAPI-KAct",
+ url:"/woshou/openapi/getPositionForKAct"
 }
