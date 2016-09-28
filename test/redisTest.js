@@ -19,8 +19,8 @@ client.hkeys('hash key', function (err, replies) {
   })
   client.quit()
 })
-client.hgetall("hash key", function (err, reply) {
+client.hgetall('hash key', function (err, reply) {
   // reply is null when the key is missing
 
-  console.log(reply["hashtest 1"])
+  console.log(reply['hashtest 1'])
 });

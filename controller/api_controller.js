@@ -14,7 +14,7 @@ client.on('error', (err) => {
  *
  */
 exports.createDocument = function (document) {
-  client.set(documentId, document, redis.print)
+  client.set(document.documentId, document, redis.print)
 }
 
 exports.updateDocument = function (name, description) {
@@ -93,14 +93,16 @@ exports.getChangeLogByDocument = function (documentId) {
 }
 
 function generateChangeLog(api) {
-  assert(Object.prototype.toString.call(api.updates).contain('Array'))
+  assert(Object.prototype.toString.call(api.updates)
+    .contain('Array'))
   let update = getLastComment(api)
   let log = ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api)
 }
 
 function getLastUpdate(api) {
   let updates = api.updates
-  assert(Object.prototype.toString.call(api.updates).contain('Array'))
+  assert(Object.prototype.toString.call(api.updates)
+    .contain('Array'))
   let lastUpdate = updates[0]
   for (update: updates) {
     if (lastUpdate.updateTime < update.updateTime) {
