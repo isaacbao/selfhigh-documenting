@@ -1,43 +1,43 @@
 {
-    name: "获取特定用户所属企业的职位（for 行动流）",
-    params: [{
-        name: "appId",
-        valueType: "String",
-        valueSample: "",
-        valueScope: "",
-        description: "行动流的appId"
+    "name": "获取特定用户所属企业的职位（for 行动流）",
+    "params": [{
+        "name": "appId",
+        "valueType": "String",
+        "valueSample": "",
+        "valueScope": "",
+        "description": "行动流的appId"
     }, {
-        name: "appSecret",
-        valueType: "String",
-        valueSample: "",
-        valueScope: ",
-        description: "行动流的appSecret"
+        "name": "appSecret",
+        "valueType": "String",
+        "valueSample": "",
+        "valueScope": "",
+        "description": "行动流的appSecret"
     }, {
-        name: "cid",
-        valueType: "String",
-        valueSample: "",
-        valueScope: "",
-        description: "要获取职位的用户的云通行证id"
-    }, ]
-    returnData: {
-      "recruitNumber": "招聘人数",
-      "publishTime": "发布日期",
-      "specialFocus": "是否特别关注职位",
-      "organizationName": "职位所属组织名称",
-      "city": "城市",
-      "refreshTime": "刷新时间",
-      "degree": "学历",
-      "workExp": "工作年限",
-      "resumeNum": "投到该职位下的简历数",
-      "salary": "工资（月薪）",
-      "positionName": "职位名称",
-      "organizationId": "职位所属组织的Id",
-      "positionId": "职位Id",
-      "publishedSite": "职位已经云发布的网站",
-      "department": "招人的部门",
-      "status": "职位状态"
+        "name": "cid",
+        "valueType": "String",
+        "valueSample": "",
+        "valueScope": "",
+        "description": "要获取职位的用户的云通行证id"
+    }],
+    "returnData": {
+        "recruitNumber": "招聘人数",
+        "publishTime": "发布日期",
+        "specialFocus": "是否特别关注职位",
+        "organizationName": "职位所属组织名称",
+        "city": "城市",
+        "refreshTime": "刷新时间",
+        "degree": "学历",
+        "workExp": "工作年限",
+        "resumeNum": "投到该职位下的简历数",
+        "salary": "工资（月薪）",
+        "positionName": "职位名称",
+        "organizationId": "职位所属组织的Id",
+        "positionId": "职位Id",
+        "publishedSite": "职位已经云发布的网站",
+        "department": "招人的部门",
+        "status": "职位状态"
     },
-    returnSample: {
+    "returnSample": {
         "code": "00",
         "message": "success",
         "result": "success",
@@ -94,15 +94,15 @@
             "status": "发布中"
         }]
     },
-    comment: "用于行动流获取职位",
-    addDate: "2016-09-27",
-    updates: [{
-            updateTime: "2016-09-27"
-            updateComment: "新增接口"
-            operator: "陆荣扬"
+    "comment": "用于行动流获取职位",
+    "addDate": "2016-09-27",
+    "updates": [{
+            "updateTime": "2016-09-27",
+            "updateComment": "新增接口",
+            "operator": "陆荣扬"
         }
 
     ],
-    group: "OpenAPI-KAct",
-    url: "/woshou/openapi/getPositionForKAct"
+    "group": "OpenAPI-KAct",
+    "url": "/woshou/openapi/getPositionForKAct"
 }
