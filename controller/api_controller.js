@@ -50,8 +50,9 @@ exports.addAPI = function (api, documentId) {
 
       let changeLog = generateChangeLog(api)
       console.log(changeLog)
-      document.changeLogs.push()
-      client.set(documentId, document)
+      document.changeLogs.push(changeLog)
+      console.log(document)
+      client.set(documentId, JSON.stringify(document))
     }
   })
 }
@@ -98,7 +99,7 @@ exports.getDocument = function (documentId) {
         if (err) {
           return console.error(err)
         }
-        console.log("数据写入成功！")
+        console.log(document + "\n数据写入成功！")
       })
     }
   })
