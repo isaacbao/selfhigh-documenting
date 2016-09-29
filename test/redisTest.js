@@ -1,5 +1,6 @@
 'use strict'
 const redis = require('redis')
+
 const client = redis.createClient()
 
 // if you'd like to select database 3, instead of 0 (default), call

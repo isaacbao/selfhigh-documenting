@@ -2,9 +2,11 @@
 
 const redis = require('redis')
 const assert = require('assert')
-const ChangeLog = require('./entity/update_log.js')
-const Document = require('./entity/document.js')
+const ChangeLog = require('../entity/update_log.js')
+const Document = require('../entity/document.js')
+const fs = require('fs')
 
+const client = redis.createClient()
 
 client.on('error', (err) => {
   console.log('Error ' + err)
@@ -13,8 +15,8 @@ client.on('error', (err) => {
 /**
  *
  */
-exports.createDocument = function (document) {
-  client.set(document.documentId, document, redis.print)
+exports.createDocument = function (id, document) {
+  client.set(id, document, redis.print)
 }
 
 exports.updateDocument = function (name, description) {
@@ -71,7 +73,7 @@ exports.deleteAPI = function (api, documentId, operator) {
 }
 
 function getAPIIndexByName(apis, apiName) {
-  apis.forEach(apiItem, index) {
+  for (api in apis) {
     if (apiItem.name == apiName) {
       return index
     }
@@ -81,7 +83,12 @@ function getAPIIndexByName(apis, apiName) {
 exports.getDocument = function (documentId) {
   client.get(documentId, (err, document) => {
     if (document) {
-      console.log(document)
+      fs.writeFile('output/success-getDocument.json', document, function (err) {
+        if (err) {
+          return console.error(err);
+        }
+        console.log("数据写入成功！");
+      });
     }
   })
 }
@@ -104,7 +111,7 @@ function getLastUpdate(api) {
   assert(Object.prototype.toString.call(api.updates)
     .contain('Array'))
   let lastUpdate = updates[0]
-  for (update: updates) {
+  for (update in updates) {
     if (lastUpdate.updateTime < update.updateTime) {
       lastUpdate = update
     }

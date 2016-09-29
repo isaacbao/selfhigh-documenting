@@ -24,7 +24,7 @@ exports.randomInt = function (max) {
  * @param  {[int]} length [字符串长度]
  * @return {[String]}        [一个随机字符串，由这些字符组成：0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_- ]
  */
-exports.getString = function (length) {
+exports.getStringBase = function (length) {
   let stringBuffer = ''
   for (let i = 0; i < length; i++) {
     stringBuffer += BASE_CHAR.charAt(exports.randomInt(BASE_CHAR.length))
@@ -39,11 +39,12 @@ exports.getString = function (length) {
  * @return {[String]}        [一个随机字符串，由这些chars中的字符组成]
  */
 exports.getString = function (length, chars) {
-  assert(Object.prototype.toString.call(chars) == 'object String', '字符串应该由字符串构成')
+  assert(Object.prototype.toString.call(chars)
+    .indexOf('String') != -1, '字符串应该由字符串构成')
 
-  let stringBuffer = ''
-  for (let i = 0; i < length; i++) {
-    stringBuffer += chars.charAt(exports.randomInt(chars.length))
+  var stringBuffer = ''
+  for (var i = 0; i < length; i++) {
+    stringBuffer += chars.charAt(randomInt(chars.length))
   }
   return stringBuffer
 

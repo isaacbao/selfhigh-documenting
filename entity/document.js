@@ -1,6 +1,6 @@
 'use strict'
 
-const random = require('./util/randomUtil.js')
+const random = require('../utils/randomUtil.js')
 
 class Document {
   /**
@@ -10,8 +10,8 @@ class Document {
    * @param {[Array[UpdateLog]]} updateLogs  [文档的更新履历]
    * @param {[String]} description [文档描述]
    */
-  constructor(documentId, apis, changeLogs, description, name) {
-    this.documentId = random.getString(8)
+  constructor(apis, changeLogs, description, name) {
+
     this.apis = apis
     this.changeLogs = changeLogs
     this.description = description
