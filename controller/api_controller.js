@@ -2,7 +2,7 @@
 
 const redis = require('redis')
 const assert = require('assert')
-const ChangeLog = require('../entity/update_log.js')
+const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
 const fs = require('fs')
 
@@ -94,6 +94,7 @@ function getAPIIndexByName(apis, apiName) {
 
 exports.getDocument = function (documentId) {
   client.get(documentId, (err, document) => {
+    console.log(documentId + " ←documentId\n")
     if (document) {
       fs.writeFile('output/success-getDocument.json', document, function (err) {
         if (err) {
@@ -115,7 +116,7 @@ function generateChangeLog(api) {
   assert(Object.prototype.toString.call(api.updates)
     .indexOf('Array') !== -1)
   let update = getLastUpdate(api)
-  let log = new ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api)
+  let log = new ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api.name)
   return log
 }
 

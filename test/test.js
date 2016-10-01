@@ -19,11 +19,11 @@ function testGetDocument() {
   apiController.getDocument(documentId)
 }
 
-console.log('create document')
-testCreateDocument()
-
-console.log('add api')
-testAddApi()
+// console.log('create document')
+// testCreateDocument()
+//
+// console.log('add api')
+// testAddApi()
 
 console.log('read document')
 testGetDocument()
