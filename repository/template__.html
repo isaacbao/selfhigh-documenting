@@ -16,27 +16,104 @@
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
+    <!-- <link href="interface_doc.css" rel="stylesheet"> -->
+    <!-- <link href="blog_style.css" rel="stylesheet"> -->
+    <!--<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">-->
     <script>
-        $(function() {
-            $(".accordion").accordion({
-                collapsible: true
-            });
+    $(function() {
+        $(".accordion").accordion({
+            collapsible: true
         });
-        $(function() {
-            $(".accordion_close").accordion({
-                active: false,
-                collapsible: true
-            });
+    });
+    $(function() {
+        $(".accordion_close").accordion({
+            active: false,
+            collapsible: true
         });
+    });
     </script>
 </head>
 
 <body>
+    <!--
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="这个搜索栏只是装饰">
+        </form>
+      </div>
+    </div>
+  </nav>
+  -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <!-- 这里放根据接口大类放li -->
+                    <!--<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>-->
+                    <li>
+                        <a href="#updateRecord">更新履历</a>
+                    </li>
+                    <li>
+                        <a href="#description">说明</a>
+                    </li>
+                    <li>
+                        <a href="#company">企业相关url接口</a>
+                    </li>
+                    <li>
+                        <a href="#delivery">投递相关url接口</a>
+                    </li>
+                    <li>
+                        <a href="#hr">HR用户相关url接口</a>
+                    </li>
+                    <li>
+                        <a href="#interview">面试相关url接口</a>
+                    </li>
+                    <li>
+                        <a href="#login">登录相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#openapi">对第三方应用开放的相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#position">职位相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#register">注册相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#repos">简历库相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#search">简历云搜相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#template">信件模板相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#seeker">求职者用户相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#resume">简历相关接口</a>
+                    </li>
+                    <li>
+                        <a href="#weixin">微信相关接口</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -50,13 +127,68 @@
                                 <th>Operator</th>
                                 <th colspan=2>Content</th>
                             </tr>
-                            <!-- 更新履历 放td，类似这样 -->
-                            <!--
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-03-24</p>
+                                </td>
+                                <td>付光增</td>
+                                <td colspan=2>付光增：“这是我这个月的……党……费……”</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-04-15</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#joinCompany">
+                                        <p>新增-[完成注册，加入已有的企业]</p>
+                                    </a>
+                                    <a href="#getDeliveryInfo">
+                                        <p class="update">修改-[获取投递详情]</p>
+                                    </a>
+                                    <a href="#getOperateRecord">
+                                        <p class="update">修改-[获取简历操作记录]</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-05-19</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#recommendResume">
+                                        <p>新增-[推荐简历到其他职位下(HR用户专用)]</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-05-25</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#queryPosition">
+                                        <p class="update">更新-[查询职位信息，以键值对的形式传递参数]</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-01</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#registerFromCloud">
+                                        <p class="update">更新-[云服务在握手网上注册帐号]</p>
+                                    </a>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>
                                     <p class="blog-post-meta">2016-06-07</p>
                                 </td>
-                                <td>lou</td>
+                                <td>陆荣扬</td>
                                 <td colspan=2>
                                     <a href="#getCompanyWebsite">
                                         <p>新增-[获取企业招聘官网信息]</p>
@@ -81,9 +213,355 @@
                                     </a>
                                 </td>
                             </tr>
-                            -->
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-08</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#getCopywriting">
+                                        <p>新增-[获取企业宣传文案]</p>
+                                    </a>
+                                    <a href="#addCopywriting">
+                                        <p>新增-[增加企业宣传文案]</p>
+                                    </a>
+                                    <a href="#updateCopywriting">
+                                        <p>新增-[更新企业宣传文案]</p>
+                                    </a>
+                                    <a href="#deleteCopywriting">
+                                        <p>新增-[更新企业宣传文案]</p>
+                                    </a>
+                                </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-12</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#updateCompanyWebsite">
+                                        <p class="update">更新-[更新企业招聘官网信息]</p>
+                                    </a>
+                                    <a href="#cutCompanyLogo">
+                                        <p class="update">更新-[上传企业招聘官网图片]</p>
+                                    </a>
+                                </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-15</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#getExtendPositionList">
+                                        <p>新增-[查找企业用户在其他招聘网站{发布中}的职位]</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-21</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#syncExtendPosition">
+                                        <p>新增-[同步外网职位]</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-24</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#deliverResumeOffline">
+                                        <p>将其他网站的简历投递到指定职位</p>
+                                    </a>
+                                    <a href="#resume">
+                                        <p>简历相关接口</p>
+                                    </a>
+                                    <a href="#visitCompanyWebsite">
+                                        <p>访问企业招聘官网</p>
+                                    </a>
+                                    <a href="#deliveryLocalResumeOffline">
+                                        <p>投递本地简历(招聘官网用)</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-06-28</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#uploadWebsitePhoto">
+                                        <p>上传企业招聘官网的展示图片</p>
+                                    </a>
+                                    <a href="#uploadWeixinWebsitePhoto">
+                                        <p>上传微信招聘官网的展示图片</p>
+                                    </a>
+                                    <a href="#getWeixinBanners">
+                                        <p>获取所有微信招聘官网banner图的url</p>
+                                    </a>
+                                    <a href="#getWebsiteBanners ">
+                                        <p>获取所有企业招聘官网banner图的url</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-05</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#uploadWeixinWebsitePhotoBase64">
+                                        <p>上传微信招聘官网的展示图片(base64位的形式)</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-06</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#deleteWeixinWebsitePhoto">
+                                        <p>删除微信招聘官网图片</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-08</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#deleteWebsitePhoto">
+                                        <p>删除招聘官网图片</p>
+                                    </a>
+                                    <a href="#queryPositionOffline">
+                                        <p>查询招聘官网上的职位</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-14</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#getCampusRecruitment">
+                                        <p>获取校园招聘信息(已作废)</p>
+                                    </a>
+                                    <a href="#updateCampusRecruitment">
+                                        <p>变更校园招聘信息(已作废)</p>
+                                    </a>
+                                    <a href="#uploadCampusWebsitePhoto">
+                                        <p>上传校园招聘官网的展示图片</p>
+                                    </a>
+                                    <a href="#deleteCampusPhoto">
+                                        <p>删除校园招聘的展示图片</p>
+                                    </a>
+                                    <a href="#getCampusBanners">
+                                        <p>获取所有校园招聘官网banner图</p>
+                                    </a>
+                                    <a class="update" href="#uploadWebsitePhoto">
+                                        <p>上传企业招聘官网的展示图片</p>
+                                    </a>
+                                    <a class="update" href="#uploadWeixinWebsitePhotoBase64">
+                                        <p>上传微信招聘官网的展示图片(base64位的形式)</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-18</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#saveWeixinApp">
+                                        <p>保存客户的微信公众号appId,appSecrect</p>
+                                    </a>
+                                    <a href="#getWeixinWebsite">
+                                        <p>获取微信招聘官网信息</p>
+                                    </a>
+                                    <a href="#updateWeixinWebsite">
+                                        <p>变更微信招聘官网信息</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-19</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#uploadCampusWebsitePhoto" class="update">
+                                        <p>上传校园招聘官网的展示图片</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-20</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#uploadCampusUEditorPhoto" class="update">
+                                        <p>上传校园招聘官网的ueditor图片(沙雕ueditor对response的格式有限制)</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-25</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#deliveryLocalResumeOffline">
+                                        <p>投递本地简历(招聘官网用)</p>
+                                    </a>
+                                    <a href="#uploadLocalResumeOffline">
+                                        <p>上传本地简历(招聘官网用)</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-07-27</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#deliveryLocalResumeOffline">
+                                        <p>投递本地简历(招聘官网用)</p>
+                                    </a>
+                                    <a href="#updateWeixinWebsite">
+                                        <p>变更微信招聘官网信息</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-08-05</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#getResumeOffline">
+                                        <p>获取解析后的外网简历(招聘官网用)</p>
+                                    </a>
+                                    <a href="#updateWeixinWebsite">
+                                        <p>变更微信招聘官网信息</p>
+                                    </a>
+                                    <a href="#getWeixinCompanyShow">
+                                        <p>获取微信招聘官网企业秀</p>
+                                    </a>
+                                    <a href="#getPositionByWeixinWebsite">
+                                        <p>根据招聘官网的id获取企业下的职位</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="blog-post-meta">2016-08-08</p>
+                                </td>
+                                <td>陆荣扬</td>
+                                <td colspan=2>
+                                    <a href="#getWeixinJSConfig">
+                                        <p>获取微信招聘官网JSAPI配置</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-10</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#getPositionByIdOffline">
+                                    <p>获取指定id的职位信息(招聘网站用)</p>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-11</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#getWeixinPositionBackground">
+                                    <p>获取微信招聘官网职位页面的背景图</p>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-09</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#toPanKingdee">
+                                    <p>点广告登录进金蝶云盘</p>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-15</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <p class="new">上传接口统一整改，应对机掰事儿多的傻屌IE</p>
+                                <a href="#getWeixinPositionBackground">
+                                    <p>获取微信招聘官网职位页面的背景图</p>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-08</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#countDeliveryByUser">
+                                    <p>统计用户有权限查看的各类（待处理、已处理、待面试……）投递的数目</p>
+                                </a>
+                                <a href="#countDeliveryByPosition">
+                                    <p>统计某一职位各类（待处理、已处理、待面试……）的投递的数目</p>
+                                </a>
+                                <a href="#getDeliveryByUserPaging">
+                                    <p>获取用户有权限查看的投递(分页)</p>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-19</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#getResumesPaging">
+                                    <p>获取指定来源的简历(分页)</p>
+                                </a>
+                                <a href="#getBlackListResumesPaging">
+                                    <p>获取公司的黑名单信息（分页）</p>
+                                </a>
+                                <a href="#getTanlentClipResumesPaging">
+                                    <p>获取人才夹里的简历(分页)</p>
+                                </a>
+                            </td>
+                            <tr>
+                            <td>
+                                <p class="blog-post-meta">2016-08-23</p>
+                            </td>
+                            <td>陆荣扬</td>
+                            <td colspan=2>
+                                <a href="#isCompanyWebsiteCommitted">
+                                    <p>网站是否提交</p>
+                                </a>
+                            </td>
+                        </tr>
+                        </tr>
                         </table>
                     </div>
                     <hr>
@@ -94,19 +572,18 @@
                             <th>Operator</th>
                             <th colspan=2>Content</th>
                         </tr>
-                        <!--
+
                         <tr>
                             <td>
                                 <p class="blog-post-meta">2016-09-09</p>
                             </td>
-                            <td>lou</td>
+                            <td>陆荣扬</td>
                             <td colspan=2>
                                 <a href="#loginFromNodejs">
                                     <p>从nodejs登录</p>
                                 </a>
                             </td>
                         </tr>
-                        -->
                     </table>
                     <hr>
                     <h2 class="blog-post-title"><span id= 'description' >说明</span></h2>
@@ -1557,8 +2034,8 @@
                             <br/> ResponseInfo countDeliveryByPosition(HttpServletRequest request)
                             <br/>
                             <div class="accordion">
-                                <h3>参数示例：</h3>
-                                <pre>
+                              <h3>参数示例：</h3>
+                              <pre>
         {
           positionId:"#2SF3420-a"
         }
@@ -1608,8 +2085,8 @@
           ...
         }
                             </pre>
-                            </div>
-                            <div class="accordion">
+                        </div>
+                        <div class="accordion">
                                 <h3>返回示例：</h3>
                                 <pre>
         {
@@ -1694,7 +2171,7 @@
     "recordsTotal": 43
 }
                             </pre>
-                            </div>
+                        </div>
                         </p>
                         <hr>
                         <p>
@@ -2074,7 +2551,8 @@
                             <br/> 参数： appSecret
                             <br/> 参数： userId 要登录的用户id
                             <br/> 返回值 ResponseInfo
-                            <br/> java函数：ResponseInfo loginFromNodejs(HttpServletRequest request, String appId, String appSecret, String userId, HttpServletResponse response)
+                            <br/> java函数：ResponseInfo loginFromNodejs(HttpServletRequest request, String appId, String appSecret, String userId,
+                                        HttpServletResponse response)
 
                         </p>
 
@@ -2609,8 +3087,8 @@
           ...
         }
                             </pre>
-                            </div>
-                            <div class="accordion">
+                        </div>
+                        <div class="accordion">
                                 <h3>返回示例：</h3>
                                 <pre>
         {
@@ -2695,7 +3173,7 @@
     "recordsTotal": 43
 }
                             </pre>
-                            </div>
+                        </div>
                         </p>
                         <hr>
                         <h3 id="getBlackListResumesPaging">获取公司的黑名单信息（分页）</h3>
@@ -2704,10 +3182,10 @@
                             /woshou/repos/blacklistPaging
                             <br/> 返回值 ResponseInfo
                             <br/> ResponseInfo getBlackListResumesPaging(HttpServletRequest request)
-                </div>
-                <div class="accordion">
-                    <h3>参数示例：</h3>
-                    <pre>
+                            </div>
+                            <div class="accordion">
+                                <h3>参数示例：</h3>
+                                <pre>
         {
           //页数
           pageNumber:"2",
@@ -2738,10 +3216,10 @@
           ...
         }
                             </pre>
-                </div>
-                <div class="accordion">
-                    <h3>返回示例：</h3>
-                    <pre>
+                        </div>
+                        <div class="accordion">
+                                <h3>返回示例：</h3>
+                                <pre>
         {
     "recordsFiltered": 43,
     "data": [{
@@ -2824,18 +3302,18 @@
     "recordsTotal": 43
 }
                             </pre>
-                </div>
-                </p>
-                <hr>
-                <h3 id="getTanlentClipResumesPaging">获取人才夹里的简历(分页)</h3>
-                <p>
-                    <p class="blog-post-meta">2016-08-19 新增</p>
-                    /woshou/repos/talentclipPaging
-                    <br/> 返回值 ResponseInfo
-                    <br/> ResponseInfo getTanlentClipResumesPaging(HttpServletRequest request)
-                    <div class="accordion">
-                        <h3>参数示例：</h3>
-                        <pre>
+                        </div>
+                        </p>
+                        <hr>
+                        <h3 id="getTanlentClipResumesPaging">获取人才夹里的简历(分页)</h3>
+                        <p>
+                            <p class="blog-post-meta">2016-08-19 新增</p>
+                            /woshou/repos/talentclipPaging
+                            <br/> 返回值 ResponseInfo
+                            <br/> ResponseInfo getTanlentClipResumesPaging(HttpServletRequest request)
+                            <div class="accordion">
+                                <h3>参数示例：</h3>
+                                <pre>
         {
           //页数
           pageNumber:"2",
@@ -2866,10 +3344,10 @@
           ...
         }
                             </pre>
-                    </div>
-                    <div class="accordion">
-                        <h3>返回示例：</h3>
-                        <pre>
+                        </div>
+                        <div class="accordion">
+                                <h3>返回示例：</h3>
+                                <pre>
         {
     "recordsFiltered": 43,
     "data": [{
@@ -2952,211 +3430,211 @@
     "recordsTotal": 43
 }
                             </pre>
-                    </div>
-                </p>
-                <hr>
-                <p>
-                    <a href="#header">回页首</a>
-                </p>
-                <hr>
-                <h2 class="blog-post-title"><span id= 'search' >简历云搜索服务url接口</span></h2>
-                <p>
-                    统一前缀： /woshou/resume/
-                    <br/> 文件：ResumeSearchController.java
-                </p>
-                <hr>
-                <h3>云搜简历</h3>
-                <p>
-                    /woshou/resume/search
-                    <br/> String searchResume(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>获取简历详情</h3>
-                <p>
-                    /woshou/resume/search/detail
-                    <br/> String getResumeDetail(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>获取简历的联系方式</h3>
-                <p>
-                    /woshou/resume/search/contactway
-                    <br/> String getResumeContact(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>保存搜索方案</h3>
-                <p>
-                    /woshou/resume/search/plan
-                    <br/> 方法:post 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getSearchPlan(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>获取搜索方案</h3>
-                <p>
-                    /woshou/resume/search/plan
-                    <br/> 方法:get 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo saveSearchPlan(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>删除搜索方案</h3>
-                <p>
-                    /woshou/resume/search/plan/delete 参数： ids id，多个以|分隔
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo deleteSearchPlan(HttpServletRequest request, HttpServletResponse response, String ids)
-                </p>
-                <hr>
-                <h3>下载搜索到的简历</h3>
-                <p>
-                    /woshou/resume/search/resume/download
-                    <br/> 返回类型：text/html String downloadSearchResume(HttpServletRequest request, HttpServletResponse response, ModelMap map)
-                </p>
-                <hr>
-                <h3>转发搜索到的简历</h3>
-                <p>
-                    /woshou/resume/search/resume/forward
-                    <br/> 返回类型：text/html 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo forwardSearchResume(HttpServletRequest request, HttpServletResponse response, ModelMap map)
-                </p>
-                <hr>
-                <h3>下载搜索简历，用于转发时做为附件</h3>
-                <p>
-                    /woshou/resume/search/resume/{id}/download
-                    <br/> 参数： id
-                    <br/> 返回类型：text/html String downloadSearchResumeBy(HttpServletRequest request, @PathVariable String id, HttpServletResponse response, ModelMap map)
-                </p>
-                <p>
-                    <a href="#header">回页首</a>
-                </p>
-                <hr>
-                <h2 class="blog-post-title"><span id= 'template' >信件信件模板url接口</span></h2>
-                <p>
-                    统一前缀： /woshou/template/
-                    <br/> 文件：TemplateController.java
-                </p>
-                <hr>
-                <h3>根据模板类型获取模板</h3>
-                <p>
-                    /woshou/template/bytype
-                    <br/> 参数： type 模版类型
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getTemplateByType(HttpServletRequest request, String type, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3>设置默认信件模板</h3>
-                <p>
-                    /woshou/template/default/set
-                    <br/> 参数： id 信件模板id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo setDefault(String id, HttpServletRequest request)
-                </p>
-                <hr>
-                <h3>获取全部信件模板</h3>
-                <p>
-                    /woshou/template/all
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getTemplates(HttpServletRequest request)
-                </p>
-                <hr>
-                <h3>获取全部信件模板</h3>
-                <p>
-                    /woshou/template/letter
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getMessageTemplates(HttpServletRequest request)
-                </p>
-                <hr>
-                <h3>创建信件模板</h3>
-                <p>
-                    /woshou/template/create
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo addTemplate(HttpServletRequest request)
-                </p>
-                <hr>
-                <h3>根据id获取信件模板</h3>
-                <p>
-                    /woshou/template/{id}
-                    <br/> 参数： id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getTemplateById(HttpServletRequest request, @PathVariable String id)
-                </p>
-                <hr>
-                <h3>更新信件模板</h3>
-                <p>
-                    /woshou/template/{id}/update
-                    <br/> 参数： id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo updateTemplate(HttpServletRequest request, @PathVariable String id)
-                </p>
-                <hr>
-                <h3>删除信件模板</h3>
-                <p>
-                    /woshou/template/{id}/delete
-                    <br/> 参数： id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo deleteTemplate(HttpServletRequest request, @PathVariable String id)
-                </p>
-                <p>
-                    <a href="#header">回页首</a>
-                </p>
-                <hr>
-                <h2><span id="seeker">求职者url</span></h2>
-                <p>文件：UserController.java</p>
-                <hr>
-                <h3>获取登录的求职者的信息</h3>
-                <p>
-                    /woshou/user/info
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数：ResponseInfo getUserInfo(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <p>
-                    <a href="#header">回页首</a>
-                </p>
-                <hr>
-                <h2 class="blog-post-title"><span id="resume">简历相关接口</span></h2>
-                <p>文件：ResumeController.java</p>
-                <hr>
-                <h3 class="blog-post-title">从其他网站导入简历（微信端）</h3>
-                <p>
-                    /woshou/resume/import
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getResumeList(HttpServletRequest request, String username, String password, String verifyCode, String site, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getverifyCodeImage">获取验证码(微信端)</span></h3>
-                <p>
-                    /woshou/resume/verifycode/image
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getverifyCodeImage(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id= 'importOffline' >从其他网站导入简历（招聘官网）</span></h3>
-                <p>
-                    /woshou/resume/import
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getResumeListOffline(HttpServletRequest request, String username, String password, String verifyCode, String site, HttpServletResponse response)
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getverifyCodeImageOffline">获取验证码（招聘官网）</span></h3>
-                <p>
-                    /woshou/resume/verifycodeOffline/image
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getverifyCodeImage(HttpServletRequest request, HttpServletResponse response)
-                </p>
-                <hr>
-                <h2 class="blog-post-title"><span id= 'weixin' >微信相关url接口</span></h2>
-                <p>
-                    统一前缀： /woshou/weixin/
-                    <br/> 文件：WeixinCompanyController.java
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getWeixinCompanyShow">获取微信招聘官网企业秀</span></h3>
-                <p class="blog-post-meta">2016-08-05 新增</p>
-                <p>
-                    /woshou/weixin/website/getWeixinCompanyShow/{weixinWebsiteId}
-                    <br/> 参数 @param weixinWebsiteId 微信招聘官网id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getWeixinCompanyShow(HttpServletRequest request, @PathVariable String weixinWebsiteId)
-                    <div class="accordion_close">
-                        <h3>返回值内的data——一个company实体：</h3>
-                        <pre>
+                        </div>
+                        </p>
+                        <hr>
+                        <p>
+                            <a href="#header">回页首</a>
+                        </p>
+                        <hr>
+                        <h2 class="blog-post-title"><span id= 'search' >简历云搜索服务url接口</span></h2>
+                        <p>
+                            统一前缀： /woshou/resume/
+                            <br/> 文件：ResumeSearchController.java
+                        </p>
+                        <hr>
+                        <h3>云搜简历</h3>
+                        <p>
+                            /woshou/resume/search
+                            <br/> String searchResume(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>获取简历详情</h3>
+                        <p>
+                            /woshou/resume/search/detail
+                            <br/> String getResumeDetail(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>获取简历的联系方式</h3>
+                        <p>
+                            /woshou/resume/search/contactway
+                            <br/> String getResumeContact(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>保存搜索方案</h3>
+                        <p>
+                            /woshou/resume/search/plan
+                            <br/> 方法:post 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getSearchPlan(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>获取搜索方案</h3>
+                        <p>
+                            /woshou/resume/search/plan
+                            <br/> 方法:get 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo saveSearchPlan(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>删除搜索方案</h3>
+                        <p>
+                            /woshou/resume/search/plan/delete 参数： ids id，多个以|分隔
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo deleteSearchPlan(HttpServletRequest request, HttpServletResponse response, String ids)
+                        </p>
+                        <hr>
+                        <h3>下载搜索到的简历</h3>
+                        <p>
+                            /woshou/resume/search/resume/download
+                            <br/> 返回类型：text/html String downloadSearchResume(HttpServletRequest request, HttpServletResponse response, ModelMap map)
+                        </p>
+                        <hr>
+                        <h3>转发搜索到的简历</h3>
+                        <p>
+                            /woshou/resume/search/resume/forward
+                            <br/> 返回类型：text/html 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo forwardSearchResume(HttpServletRequest request, HttpServletResponse response, ModelMap map)
+                        </p>
+                        <hr>
+                        <h3>下载搜索简历，用于转发时做为附件</h3>
+                        <p>
+                            /woshou/resume/search/resume/{id}/download
+                            <br/> 参数： id
+                            <br/> 返回类型：text/html String downloadSearchResumeBy(HttpServletRequest request, @PathVariable String id, HttpServletResponse response, ModelMap map)
+                        </p>
+                        <p>
+                            <a href="#header">回页首</a>
+                        </p>
+                        <hr>
+                        <h2 class="blog-post-title"><span id= 'template' >信件信件模板url接口</span></h2>
+                        <p>
+                            统一前缀： /woshou/template/
+                            <br/> 文件：TemplateController.java
+                        </p>
+                        <hr>
+                        <h3>根据模板类型获取模板</h3>
+                        <p>
+                            /woshou/template/bytype
+                            <br/> 参数： type 模版类型
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getTemplateByType(HttpServletRequest request, String type, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3>设置默认信件模板</h3>
+                        <p>
+                            /woshou/template/default/set
+                            <br/> 参数： id 信件模板id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo setDefault(String id, HttpServletRequest request)
+                        </p>
+                        <hr>
+                        <h3>获取全部信件模板</h3>
+                        <p>
+                            /woshou/template/all
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getTemplates(HttpServletRequest request)
+                        </p>
+                        <hr>
+                        <h3>获取全部信件模板</h3>
+                        <p>
+                            /woshou/template/letter
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getMessageTemplates(HttpServletRequest request)
+                        </p>
+                        <hr>
+                        <h3>创建信件模板</h3>
+                        <p>
+                            /woshou/template/create
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo addTemplate(HttpServletRequest request)
+                        </p>
+                        <hr>
+                        <h3>根据id获取信件模板</h3>
+                        <p>
+                            /woshou/template/{id}
+                            <br/> 参数： id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getTemplateById(HttpServletRequest request, @PathVariable String id)
+                        </p>
+                        <hr>
+                        <h3>更新信件模板</h3>
+                        <p>
+                            /woshou/template/{id}/update
+                            <br/> 参数： id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo updateTemplate(HttpServletRequest request, @PathVariable String id)
+                        </p>
+                        <hr>
+                        <h3>删除信件模板</h3>
+                        <p>
+                            /woshou/template/{id}/delete
+                            <br/> 参数： id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo deleteTemplate(HttpServletRequest request, @PathVariable String id)
+                        </p>
+                        <p>
+                            <a href="#header">回页首</a>
+                        </p>
+                        <hr>
+                        <h2><span id="seeker">求职者url</span></h2>
+                        <p>文件：UserController.java</p>
+                        <hr>
+                        <h3>获取登录的求职者的信息</h3>
+                        <p>
+                            /woshou/user/info
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数：ResponseInfo getUserInfo(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <p>
+                            <a href="#header">回页首</a>
+                        </p>
+                        <hr>
+                        <h2 class="blog-post-title"><span id="resume">简历相关接口</span></h2>
+                        <p>文件：ResumeController.java</p>
+                        <hr>
+                        <h3 class="blog-post-title">从其他网站导入简历（微信端）</h3>
+                        <p>
+                            /woshou/resume/import
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getResumeList(HttpServletRequest request, String username, String password, String verifyCode, String site, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getverifyCodeImage">获取验证码(微信端)</span></h3>
+                        <p>
+                            /woshou/resume/verifycode/image
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getverifyCodeImage(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id= 'importOffline' >从其他网站导入简历（招聘官网）</span></h3>
+                        <p>
+                            /woshou/resume/import
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getResumeListOffline(HttpServletRequest request, String username, String password, String verifyCode, String site, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getverifyCodeImageOffline">获取验证码（招聘官网）</span></h3>
+                        <p>
+                            /woshou/resume/verifycodeOffline/image
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getverifyCodeImage(HttpServletRequest request, HttpServletResponse response)
+                        </p>
+                        <hr>
+                        <h2 class="blog-post-title"><span id= 'weixin' >微信相关url接口</span></h2>
+                        <p>
+                            统一前缀： /woshou/weixin/
+                            <br/> 文件：WeixinCompanyController.java
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getWeixinCompanyShow">获取微信招聘官网企业秀</span></h3>
+                        <p class="blog-post-meta">2016-08-05 新增</p>
+                        <p>
+                            /woshou/weixin/website/getWeixinCompanyShow/{weixinWebsiteId}
+                            <br/> 参数 @param weixinWebsiteId 微信招聘官网id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getWeixinCompanyShow(HttpServletRequest request, @PathVariable String weixinWebsiteId)
+                            <div class="accordion_close">
+                                <h3>返回值内的data——一个company实体：</h3>
+                                <pre>
                           <code>
 
     @Id
@@ -3256,37 +3734,37 @@
 
                           </code>
                           </pre>
-                    </div>
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getWeixinCompanyShow">根据招聘官网的id获取企业下的职位</span></h3>
-                <p class="blog-post-meta">2016-08-05 新增</p>
-                <p>
-                    /woshou/weixin/position/weixinWebsite/{weixinWebsiteid}
-                    <br/> 参数 @param weixinWebsiteId 微信招聘官网id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getPositionByWeixinWebsite(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getWeixinPositionBackground">获取微信招聘官网职位页面的背景图</span></h3>
-                <p class="blog-post-meta">2016-08-11 新增</p>
-                <p>
-                    /woshou/weixin/website/getWeixinPositionBackground/{weixinWebsiteid}
-                    <br/> 参数 @param weixinWebsiteId 微信招聘官网id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getWeixinPositionBackground(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
-                </p>
-                <hr>
-                <h3 class="blog-post-title"><span id="getWeixinJSConfig">获取微信招聘官网JSAPI配置</span></h3>
-                <p class="blog-post-meta">2016-08-08 新增</p>
-                <p>
-                    /woshou/weixin/website/getWeixinJSConfig/{weixinWebsiteId}
-                    <br/> 参数 @param weixinWebsiteId 微信招聘官网id
-                    <br/> 返回值 ResponseInfo
-                    <br/> java函数： ResponseInfo getPositionByWeixinWebsite(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
-                    <div class="accordion">
-                        <h3>参数</h3>
-                        <pre>
+                            </div>
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getWeixinCompanyShow">根据招聘官网的id获取企业下的职位</span></h3>
+                        <p class="blog-post-meta">2016-08-05 新增</p>
+                        <p>
+                            /woshou/weixin/position/weixinWebsite/{weixinWebsiteid}
+                            <br/> 参数 @param weixinWebsiteId 微信招聘官网id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getPositionByWeixinWebsite(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getWeixinPositionBackground">获取微信招聘官网职位页面的背景图</span></h3>
+                        <p class="blog-post-meta">2016-08-11 新增</p>
+                        <p>
+                            /woshou/weixin/website/getWeixinPositionBackground/{weixinWebsiteid}
+                            <br/> 参数 @param weixinWebsiteId 微信招聘官网id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getWeixinPositionBackground(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
+                        </p>
+                        <hr>
+                        <h3 class="blog-post-title"><span id="getWeixinJSConfig">获取微信招聘官网JSAPI配置</span></h3>
+                        <p class="blog-post-meta">2016-08-08 新增</p>
+                        <p>
+                            /woshou/weixin/website/getWeixinJSConfig/{weixinWebsiteId}
+                            <br/> 参数 @param weixinWebsiteId 微信招聘官网id
+                            <br/> 返回值 ResponseInfo
+                            <br/> java函数： ResponseInfo getPositionByWeixinWebsite(HttpServletRequest request, HttpServletResponse response, @PathVariable String weixinWebsiteid)
+                            <div class="accordion">
+                                <h3>参数</h3>
+                                <pre>
 
     {
       "url": "http://www.baidu.com"//当前页面的url，如果有#号，截掉#号及#号以后的部分
@@ -3294,10 +3772,10 @@
 
 
                               </pre>
-                    </div>
-                    <div class="accordion">
-                        <h3>返回示例</h3>
-                        <pre>
+                            </div>
+                            <div class="accordion">
+                                <h3>返回示例</h3>
+                                <pre>
 
     {
       "appId": "wxf15fa770a8c0d1b7",
@@ -3309,12 +3787,12 @@
 
 
                               </pre>
-                    </div>
-                </p>
-                <hr>
+                            </div>
+                        </p>
+                        <hr>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 

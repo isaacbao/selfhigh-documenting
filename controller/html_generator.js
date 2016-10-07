@@ -7,8 +7,14 @@ const fs = require('fs')
 
 const DOCUMENT_DIR = '../test/output/'
 
-exports.generate(document, documentName, theme) {
-  getDefaultHead(documentName, theme)
+exports.generate(document, theme) {
+  getDefaultHead(document.name, theme)
+  fs.readFile(DOCUMENT_DIR + fileName, html, function (err) {
+    if (err) {
+      return console.error(err)
+    }
+    let $ = cheerio.load(html)
+  })
 }
 
 /**
@@ -18,11 +24,11 @@ exports.generate(document, documentName, theme) {
  * @return {[type]}              [description]
  */
 function getDefaultFile(documentName, theme) {
-  fs.readFile('../repository/head.html', head, function (err) {
+  fs.readFile('../repository/template.html', head, function (err) {
     if (err) {
       return console.error(err)
     }
-    fs.writeFile(DOCUMENT_DIR + fileName, head, function (err) {
+    fs.writeFile(DOCUMENT_DIR + documentName, head, function (err) {
       if (err) {
         return console.error(err)
       }
