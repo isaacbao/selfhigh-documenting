@@ -4,16 +4,18 @@
 'use strict'
 const cheerio = require('cheerio')
 const fs = require('fs')
+const fileUtil = require('../utils/file_util.js')
 
-const DOCUMENT_DIR = '../test/output/'
+const DOCUMENT_DIR = fileUtil.root + '/test/output/'
 
-exports.generate(document, theme) {
-  getDefaultHead(document.name, theme)
+exports.generate = function (document, theme) {
+  getDefaultFile(document.name, theme)
   fs.readFile(DOCUMENT_DIR + fileName, html, function (err) {
     if (err) {
       return console.error(err)
     }
     let $ = cheerio.load(html)
+    console.log($('#description'))
   })
 }
 
@@ -36,5 +38,3 @@ function getDefaultFile(documentName, theme) {
     })
   })
 }
-
-getDefaultHead()

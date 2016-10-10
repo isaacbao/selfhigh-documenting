@@ -5,6 +5,7 @@ const assert = require('assert')
 const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
 const fs = require('fs')
+const fileUtil = require('../utils/file_util.js')
 
 const client = redis.createClient()
 
@@ -93,10 +94,11 @@ function getAPIIndexByName(apis, apiName) {
 }
 
 exports.getDocument = function (documentId) {
+  let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
   client.get(documentId, (err, document) => {
     console.log(documentId + " ←documentId\n")
     if (document) {
-      fs.writeFile('output/success-getDocument.json', document, function (err) {
+      fs.writeFile(dirPath, document, function (err) {
         if (err) {
           return console.error(err)
         }
@@ -104,6 +106,7 @@ exports.getDocument = function (documentId) {
       })
     }
   })
+  return dirPath
 }
 
 exports.getChangeLogByDocument = function (documentId) {
