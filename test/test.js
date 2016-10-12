@@ -6,6 +6,7 @@ const originDocument = require('./data/newDocument.json')
 const newAPI = require('./data/newAPI.json')
 const generator = require('../controller/html_generator_controller.js')
 const fileUtil = require('../utils/file_util.js')
+const cheerio = require('cheerio')
 
 let documentId = 'DJWYrja5'
 
@@ -26,15 +27,12 @@ function testGenerateHtml() {
   let documentPath = apiController.getDocument(documentId)
 
   console.log('try read template')
-  fs.readFile(documentPath, html, function (err) {
-    if (err) {
-      return console.error(err)
-    }
-    console.log(html)
-    let $ = cheerio.load(html)
-    console.log('description:\n' + $('#description')
-      .html())
-  })
+  let html = fs.readFileSync(documentPath, 'utf-8')
+  console.log(html)
+
+  let $ = cheerio.load(html)
+  console.log('description:\n' + $('#description')
+    .html())
   console.log('try generate')
   generator.generate()
 }
