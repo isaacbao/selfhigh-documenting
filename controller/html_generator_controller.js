@@ -9,14 +9,16 @@ const fileUtil = require('../utils/file_util.js')
 const DOCUMENT_DIR = fileUtil.root + '/test/output/'
 
 exports.generate = function (document, theme) {
-  getDefaultFile(document.name, theme)
-  fs.readFile(DOCUMENT_DIR + fileName, html, function (err) {
-    if (err) {
-      return console.error(err)
-    }
-    let $ = cheerio.load(html)
-    console.log($('#description'))
-  })
+
+  let html = getTemplate(theme)
+  console.log('html:\n' + html)
+  let $ = cheerio.load(html)
+  let documentJson = JSON.parse(document)
+  console.log('document:\n' + documentJson)
+  let descriptionElement = $('#description')
+  console.log('description:\n' + documentJson.description)
+  descriptionElement.append('<p>' + documentJson.description + '</p>')
+  console.log('description:\n' + descriptionElement.html())
 }
 
 /**
@@ -25,16 +27,6 @@ exports.generate = function (document, theme) {
  * @param  {[String]} theme        [用到的主题]
  * @return {[type]}              [description]
  */
-function getDefaultFile(documentName, theme) {
-  fs.readFile('../repository/template.html', head, function (err) {
-    if (err) {
-      return console.error(err)
-    }
-    fs.writeFile(DOCUMENT_DIR + documentName, head, function (err) {
-      if (err) {
-        return console.error(err)
-      }
-      console.log("document is generated")
-    })
-  })
+function getTemplate(theme) {
+  return fs.readFileSync('../repository/template.html', 'utf-8')
 }

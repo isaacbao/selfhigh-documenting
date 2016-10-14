@@ -26,15 +26,12 @@ function testGenerateHtml() {
   console.log('get document from redis')
   let documentPath = apiController.getDocument(documentId)
 
-  console.log('try read template')
-  let html = fs.readFileSync(documentPath, 'utf-8')
-  console.log(html)
+  console.log('try read document')
+  let document = fs.readFileSync(documentPath, 'utf-8')
 
-  let $ = cheerio.load(html)
-  console.log('description:\n' + $('#description')
-    .html())
+
   console.log('try generate')
-  generator.generate()
+  generator.generate(document, null)
 }
 
 // console.log('create document')
