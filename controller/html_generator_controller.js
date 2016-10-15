@@ -11,14 +11,37 @@ const DOCUMENT_DIR = fileUtil.root + '/test/output/'
 exports.generate = function (document, theme) {
 
   let html = getTemplate(theme)
-  console.log('html:\n' + html)
-  let $ = cheerio.load(html)
-  let documentJson = JSON.parse(document)
-  console.log('document:\n' + documentJson)
+  let $ = cheerio.load(html, {
+    decodeEntities: false
+  })
+
+
+  let updateRecordElement = $('#updateRecord');
+  let updateRecordTable = $('#updateRecord').find('table')
+  for (let index in document.changeLogs) {
+    let changeLog = document.changeLogs[index]
+    updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
+
+    // updateRecordTable.append('<td><p class="blog-post-meta">' + changeLog.date + '</p></td>')
+    //
+    // updateRecordTable.append('<td>' + changeLog.operator + '</td>')
+    //
+    // updateRecordTable.append('<td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
+    //
+    // updateRecordTable.append('</tr>')
+
+  }
+
+
   let descriptionElement = $('#description')
-  console.log('description:\n' + documentJson.description)
-  descriptionElement.append('<p>' + documentJson.description + '</p>')
-  console.log('description:\n' + descriptionElement.html())
+  descriptionElement.append('<p>' + document.description + '</p>')
+
+  let mainElement = $('#main')
+  for (let api in document.apis) {
+
+  }
+
+  return $.html()
 }
 
 /**

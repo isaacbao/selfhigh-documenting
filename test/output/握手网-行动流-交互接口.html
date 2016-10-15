@@ -9,7 +9,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -48,7 +48,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Operator</th>
-                                <th colspan=2>Content</th>
+                                <th colspan="2">Content</th>
                             </tr>
                             <!-- 更新履历 放td，类似这样 -->
                             <!--
@@ -82,16 +82,16 @@
                                 </td>
                             </tr>
                             -->
-                        </table>
+                        <tr><td><p class="blog-post-meta">2016-10-15T17:32:49.317Z</p></td><td>陆荣扬</td><td colspan="2"><a href="#获取特定用户所属企业的职位（for 行动流）"><p>新增接口</p></a></td></tr></table>
                     </div>
                     <hr>
                     <div id="lastUpdate">
-                        <h3>最近更新：<b >（点击content中的内容可以直接传送到更新的位置）</b></h3>
+                        <h3>最近更新：<b>（点击content中的内容可以直接传送到更新的位置）</b></h3>
                         <table class="table">
                             <tr>
                                 <th>Date</th>
                                 <th>Operator</th>
-                                <th colspan=2>Content</th>
+                                <th colspan="2">Content</th>
                             </tr>
                             <!--
                         <tr>
@@ -110,7 +110,7 @@
                     </div>
                     <hr>
 
-                    <h2 class="blog-post-title" id='description'>说明</h2>
+                    <h2 class="blog-post-title" id="description">说明<p></p><p>默认接口get，post皆可，标注了方法的则只可用标注返回值的方法</p><p>默认返回值为json格式，且是由ResponseInfo包裹</p><p>示例如下</p><pre><code>{code:00,message:成功,result:success,data:{id:3Qow4POgk,name:握手测试}}</code></pre><p>其中返回码code为</p><pre><code>00成功01内部异常02未登录03参数不合法04请求出错，如向云服务，云通行证请求出错05没有权限</code></pre><p>data字段是需要返回的实际数据</p><p></p></h2>
                     <hr>
                     <!--
 

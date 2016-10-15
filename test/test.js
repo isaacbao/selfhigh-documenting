@@ -27,11 +27,11 @@ function testGenerateHtml() {
   let documentPath = apiController.getDocument(documentId)
 
   console.log('try read document')
-  let document = fs.readFileSync(documentPath, 'utf-8')
-
+  let document = JSON.parse(fs.readFileSync(documentPath, 'utf-8'))
 
   console.log('try generate')
-  generator.generate(document, null)
+  let documentHtml = generator.generate(document, null)
+  fs.writeFileSync('output/' + document.name + '.html', documentHtml, 'UTF-8')
 }
 
 // console.log('create document')

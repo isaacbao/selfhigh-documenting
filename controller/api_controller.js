@@ -29,7 +29,7 @@ exports.updateDocument = function (documentId, name, description) {
     if (document) {
       document.name = name
       document.description = description
-      console.log(document)
+        // console.log(document)
       client.set(documentId, document)
     }
   })
@@ -75,7 +75,7 @@ exports.updateAPI = function (api, documentId) {
 
 exports.deleteAPI = function (api, documentId, operator) {
   client.get(documentId, (err, document) => {
-    console.log(document)
+    // console.log(document)
     let apiIndex = getAPIIndexByName(api.name)
     let deletedApi = document.apis.apiIndex
     document.apis.push(apiIndex, 1)
@@ -96,13 +96,13 @@ function getAPIIndexByName(apis, apiName) {
 exports.getDocument = function (documentId) {
   let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
   client.get(documentId, (err, document) => {
-    console.log(documentId + " ←documentId\n")
+    // console.log(documentId + " ←documentId\n")
     if (document) {
       fs.writeFile(dirPath, document, function (err) {
         if (err) {
           return console.error(err)
         }
-        console.log(document + "\n数据写入成功！")
+        // console.log(document + "\n数据写入成功！")
       })
     }
   })
@@ -120,6 +120,7 @@ function generateChangeLog(api) {
     .indexOf('Array') !== -1)
   let update = getLastUpdate(api)
   let log = new ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api.name)
+  console.log('changelog' + JSON.stringify(log))
   return log
 }
 
