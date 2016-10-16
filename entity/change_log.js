@@ -18,3 +18,6 @@ class ChangeLog {
   }
 }
 exports.ChangeLog = ChangeLog
+exports.sortByDate(log1, log2) {
+  return new Date(log1.date) - new Date(log2.date)
+}

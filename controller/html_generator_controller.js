@@ -21,15 +21,6 @@ exports.generate = function (document, theme) {
   for (let index in document.changeLogs) {
     let changeLog = document.changeLogs[index]
     updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
-
-    // updateRecordTable.append('<td><p class="blog-post-meta">' + changeLog.date + '</p></td>')
-    //
-    // updateRecordTable.append('<td>' + changeLog.operator + '</td>')
-    //
-    // updateRecordTable.append('<td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
-    //
-    // updateRecordTable.append('</tr>')
-
   }
 
 
@@ -37,8 +28,8 @@ exports.generate = function (document, theme) {
   descriptionElement.append('<p>' + document.description + '</p>')
 
   let mainElement = $('#main')
-  for (let api in document.apis) {
-
+  for (let index in document.apis) {
+    let api = document.apis[index]
   }
 
   return $.html()
