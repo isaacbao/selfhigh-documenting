@@ -16,9 +16,9 @@ exports.generate = function (document, theme) {
   })
 
 
-  let updateRecordElement = $('#updateRecord');
-  let updateRecordTable = $('#updateRecord').find('table')
-  for (let index in document.changeLogs) {
+  let updateRecordElement = $('#updateRecord')
+  let updateRecordTable = updateRecordElement.find('table')
+  for (let index = 0; index < document.changeLogs.length; index++) {
     let changeLog = document.changeLogs[index]
     updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
   }
@@ -28,7 +28,7 @@ exports.generate = function (document, theme) {
   descriptionElement.append('<p>' + document.description + '</p>')
 
   let mainElement = $('#main')
-  for (let index in document.apis) {
+  for (let index = 0; index < document.apis.length; index++) {
     let api = document.apis[index]
   }
 
