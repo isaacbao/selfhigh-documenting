@@ -8,7 +8,7 @@ const fileUtil = require('../utils/file_util.js')
 
 const DOCUMENT_DIR = fileUtil.root + '/test/output/'
 
-exports.generate = function (document, theme) {
+exports.generate = function (error, request, response, document, theme) {
 
   let html = getTemplate(theme)
   let $ = cheerio.load(html, {

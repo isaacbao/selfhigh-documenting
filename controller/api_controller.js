@@ -16,7 +16,7 @@ client.on('error', (err) => {
 /**
  *
  */
-exports.createDocument = function (id, document) {
+exports.createDocument = function (error, request, response, id, document) {
   if (Object.prototype.toString.call(document)
     .indexOf('String') !== 1) {
     document = JSON.stringify(document)
@@ -24,7 +24,7 @@ exports.createDocument = function (id, document) {
   client.set(id, document, redis.print)
 }
 
-exports.updateDocument = function (documentId, name, description) {
+exports.updateDocument = function (error, request, response, documentId, name, description) {
   client.get(documentId, (err, document) => {
     if (document) {
       document.name = name
@@ -38,7 +38,7 @@ exports.updateDocument = function (documentId, name, description) {
 /**
  *
  */
-exports.addAPI = function (api, documentId) {
+exports.addAPI = function (error, request, response, api, documentId) {
   client.get(documentId, (err, document) => {
     if (document) {
       document = JSON.parse(document)
@@ -61,7 +61,7 @@ exports.addAPI = function (api, documentId) {
 /**
  *
  */
-exports.updateAPI = function (api, documentId) {
+exports.updateAPI = function (error, request, response, api, documentId) {
   client.get(documentId, (err, document) => {
     if (document) {
       console.log(document)
@@ -73,7 +73,7 @@ exports.updateAPI = function (api, documentId) {
   })
 }
 
-exports.deleteAPI = function (api, documentId, operator) {
+exports.deleteAPI = function (error, request, response, api, documentId, operator) {
   client.get(documentId, (err, document) => {
     // console.log(document)
     let apiIndex = getAPIIndexByName(api.name)
@@ -85,7 +85,7 @@ exports.deleteAPI = function (api, documentId, operator) {
   })
 }
 
-function getAPIIndexByName(apis, apiName) {
+function getAPIIndexByName(error, request, response, apis, apiName) {
   for (let i = 0; i < apis.length; i++) {
     if (apiItem.name === apiName) {
       return i
@@ -93,7 +93,7 @@ function getAPIIndexByName(apis, apiName) {
   }
 }
 
-exports.getDocument = function (documentId) {
+exports.getDocument = function (error, request, response, documentId) {
   let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
   client.get(documentId, (err, document) => {
     // console.log(documentId + " ←documentId\n")
@@ -109,7 +109,7 @@ exports.getDocument = function (documentId) {
   return dirPath
 }
 
-exports.getChangeLogByDocument = function (documentId) {
+exports.getChangeLogByDocument = function (error, request, response, documentId) {
   client.hgetall(documentId + 'changeLog', (err, reply) => {
     console.log(reply)
   })
