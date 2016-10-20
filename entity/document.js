@@ -18,4 +18,4 @@ class Document {
     this.name = name
   }
 }
-exports.Document = Document
+module.exports = Document
