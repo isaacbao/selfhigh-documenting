@@ -93,7 +93,7 @@ function getAPIIndexByName(error, request, response, apis, apiName) {
   }
 }
 
-exports.getDocument = function (error, request, response, documentId) {
+exports.getDocument = function (request, response, documentId) {
   let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
   client.get(documentId, (err, document) => {
     // console.log(documentId + " ←documentId\n")
@@ -109,15 +109,17 @@ exports.getDocument = function (error, request, response, documentId) {
   return dirPath
 }
 
-exports.getChangeLogByDocument = function (error, request, response, documentId) {
+exports.getChangeLogByDocument = function (request, response, documentId) {
   client.hgetall(documentId + 'changeLog', (err, reply) => {
     console.log(reply)
   })
 }
 
 function generateChangeLog(api) {
-  assert(Object.prototype.toString.call(api.updates)
-    .indexOf('Array') !== -1)
+  if (Object.prototype.toString.call(api.updates)
+    .indexOf('Array') === -1) {
+    return new Error('接口更新记录异常')
+  }
   let update = getLastUpdate(api)
   let log = new ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api.name)
   console.log('changelog' + JSON.stringify(log))
@@ -125,11 +127,13 @@ function generateChangeLog(api) {
 }
 
 function getLastUpdate(api) {
+  if (Object.prototype.toString.call(api.updates)
+    .indexOf('Array') === -1) {
+    return new Error('接口更新记录异常')
+  }
   let updates = api.updates
-  assert(Object.prototype.toString.call(api.updates)
-    .indexOf('Array') !== -1)
   let lastUpdate = updates[0]
-  for (let update in updates) {
+  for (let i = 0; i < updates.length; i++) {
     if (lastUpdate.updateTime < update.updateTime) {
       lastUpdate = update
     }

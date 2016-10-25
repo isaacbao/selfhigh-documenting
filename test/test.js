@@ -40,3 +40,4 @@ function testGenerateHtml() {
 // testAddApi()
 
 testGenerateHtml()
+process.exit()

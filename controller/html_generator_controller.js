@@ -27,7 +27,7 @@ exports.generate = function (error, request, response, document, theme) {
   let descriptionElement = $('#description')
   descriptionElement.append('<p>' + document.description + '</p>')
 
-  let mainElement = $('#main')
+  let apisDiv = $('#apis')
   for (let index = 0; index < document.apis.length; index++) {
     let api = document.apis[index]
   }
