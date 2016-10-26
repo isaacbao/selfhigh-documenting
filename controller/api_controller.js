@@ -1,16 +1,17 @@
 'use strict'
 
-const redis = require('redis')
+const client = require('../utils/redis_client.js')
 const assert = require('assert')
 const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
 const fs = require('fs')
 const fileUtil = require('../utils/file_util.js')
 
-const client = redis.createClient()
+const log4js = require('../utils/logger.js')
+const logger = log4js.getLogger('api_controller')
 
 client.on('error', (err) => {
-  console.log('Error ' + err)
+  logger.error(err)
 })
 
 /**
@@ -29,7 +30,6 @@ exports.updateDocument = function (error, request, response, documentId, name, d
     if (document) {
       document.name = name
       document.description = description
-        // console.log(document)
       client.set(documentId, document)
     }
   })
@@ -132,6 +132,7 @@ function getLastUpdate(api) {
     return new Error('接口更新记录异常')
   }
   let updates = api.updates
+  updates.sort(ChangeLog.sortByDate)
   let lastUpdate = updates[0]
   for (let i = 0; i < updates.length; i++) {
     if (lastUpdate.updateTime < update.updateTime) {
