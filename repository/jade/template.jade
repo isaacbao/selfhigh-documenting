@@ -1,0 +1,128 @@
+doctype html
+html
+    head
+        title 后端接口
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
+        meta(name='description', content='')
+        meta(name='author', content='')
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css')
+        script(src='http://code.jquery.com/jquery-1.9.1.js')
+        script(src='http://code.jquery.com/ui/1.10.4/jquery-ui.js')
+        // Bootstrap core CSS
+        link(href='http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/base.css', rel='stylesheet')
+        script.
+            $(function() {
+            $(".accordion").accordion({
+            collapsible: true
+            });
+            });
+            $(function() {
+            $(".accordion_close").accordion({
+            active: false,
+            collapsible: true
+            });
+            });
+    body
+        .container-fluid
+            .row
+                .col-sm-3.col-md-2.sidebar
+                    ul#apiNav.nav.nav-sidebar
+                        // 这里放根据接口大类放li
+                .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                    #main.blog-post
+                        h1#header.page-header.blog-title 握手网后端接口文档
+                        #updateRecord.accordion_close
+                            h3 更新履历：
+                            table.table
+                                tr
+                                    th Date
+                                    th Operator
+                                    th(colspan='2') Content
+                                tr
+                                  each val,index in #{changeLog}
+                                    td
+                                      p.blog-post-meta = val.date
+                                    td = val.operator
+                                    td(colspan='2')
+                                      a(href=val.relatedAPI)
+                                // 更新履历 放td，类似这样
+                                //
+                                    <tr>
+                                    <td>
+                                    <p class="blog-post-meta">2016-06-07</p>
+                                    </td>
+                                    <td>lou</td>
+                                    <td colspan=2>
+                                    <a href="#getCompanyWebsite">
+                                    <p>新增-[获取企业招聘官网信息]</p>
+                                    </a>
+                                    <a href="#updateCompanyWebsite">
+                                    <p>新增-[更新企业招聘官网信息]</p>
+                                    </a>
+                                    <a href="#cutCompanyLogo">
+                                    <p>新增-[上传企业招聘官网图片]</p>
+                                    </a>
+                                    <a href="#remarkDelivery">
+                                    <p class="update">填坑-[新增简历备注]</p>
+                                    </a>
+                                    <a href="#deleteDeliveryRemark">
+                                    <p class="update">填坑-[删除简历备注]</p>
+                                    </a>
+                                    <a href="#tagDelivery">
+                                    <p class="update">填坑-[新增简历标签]</p>
+                                    </a>
+                                    <a href="#deleteDeliveryTag">
+                                    <p class="update">填坑-[删除简历标签]</p>
+                                    </a>
+                                    </td>
+                                    </tr>
+                        hr
+                        #lastUpdate
+                            h3
+                                | 最近更新：
+                                b （点击content中的内容可以直接传送到更新的位置）
+                            table.table
+                                tr
+                                    th Date
+                                    th Operator
+                                    th(colspan='2') Content
+                                //
+                                    <tr>
+                                    <td>
+                                    <p class="blog-post-meta">2016-09-09</p>
+                                    </td>
+                                    <td>lou</td>
+                                    <td colspan=2>
+                                    <a href="#loginFromNodejs">
+                                    <p>从nodejs登录</p>
+                                    </a>
+                                    </td>
+                                    </tr>
+                        hr
+                        h2#description.blog-post-title 说明
+                        hr
+                        #apis
+                            //
+                                <h2 class="blog-post-title"><span id= '大类id（用来href）' >投递的url接口</span></h2>
+                                <h3 id="getCompanyWebsite">获取企业招聘官网信息</h3>
+                                <p class="blog-post-meta">2016-06-07 新增</p>
+                                <p>
+                                /woshou/company/website/getWebsite
+                                <br/> 返回值 ResponseInfo
+                                <br/> java函数：ResponseInfo getCompanyWebsite(HttpServletRequest request)
+                                </p>
+                                <hr>
+                                <h3 id="isCompanyWebsiteCommitted">验证企业招聘官网是否已提交</h3>
+                                <p class="blog-post-meta">2016-08-23 新增</p>
+                                <p>
+                                /woshou/company/website/isWebsiteCommitted
+                                <br/> 返回值 ResponseInfo
+                                <br/> java函数：ResponseInfo isCompanyWebsiteCommitted(HttpServletRequest request)
+                                </p>
+                                <hr>
+// This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com)

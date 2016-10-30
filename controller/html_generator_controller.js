@@ -20,7 +20,7 @@ exports.generate = function (error, request, response, document, theme) {
   let updateRecordTable = updateRecordElement.find('table')
   for (let index = 0; index < document.changeLogs.length; index++) {
     let changeLog = document.changeLogs[index]
-    updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
+      // updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
   }
 
 

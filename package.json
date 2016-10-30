@@ -8,6 +8,7 @@
         "redis": "~2.0.0",
         "cheerio":"~0.22.0",
         "superagent":"latest",
+        "jade":"latest",
         "find-root":"latest"
     },
     "license": "MIT",
