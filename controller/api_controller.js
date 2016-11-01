@@ -43,11 +43,19 @@ exports.addAPI = function (error, request, response, api, documentId) {
     if (document) {
       document = JSON.parse(document)
 
-      if (Object.prototype.toString.call(document.apis)
+      if (Object.prototype.toString.call(document.groups)
         .indexOf('Array') === -1) {
-        document.apis = []
+        document.groups = []
       }
-      document.apis.push(api)
+
+      let tempGroup = document.groups
+      let index = tempGroup.indexOf(api.group)
+      if (index === -1) {
+        tempGroup.push(new Group(api.group, [api]))
+      } else {
+        tempGroup[index].apis.push(api)
+      }
+      document.groups.push(api)
 
       let changeLog = generateChangeLog(api)
       console.log(changeLog)

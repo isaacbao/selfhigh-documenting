@@ -1,6 +1,6 @@
 {
     "name": "握手网-行动流-交互接口",
     "description": "<p>默认接口get，post皆可，标注了方法的则只可用标注返回值的方法</p><p>默认返回值为json格式，且是由ResponseInfo包裹</p><p>示例如下</p><pre><code>{code:00,message:成功,result:success,data:{id:3Qow4POgk,name:握手测试}}</code></pre><p>其中返回码code为</p><pre><code>00成功01内部异常02未登录03参数不合法04请求出错，如向云服务，云通行证请求出错05没有权限</code></pre><p>data字段是需要返回的实际数据</p>",
-    "apis": [],
+    "groups": [],
     "changeLogs": []
 }
