@@ -34,10 +34,9 @@ function testGenerateHtml() {
   fs.writeFileSync('output/' + document.name + '.html', documentHtml, 'UTF-8')
 }
 
-// console.log('create document')
-// testCreateDocument()
-// console.log('add api')
-// testAddApi()
+console.log('create document')
+testCreateDocument()
+  // console.log('add api')
+  // testAddApi()
 
-testGenerateHtml()
-process.exit()
+// testGenerateHtml()

@@ -10,29 +10,6 @@ const DOCUMENT_DIR = fileUtil.root + '/test/output/'
 
 exports.generate = function (error, request, response, document, theme) {
 
-  let html = getTemplate(theme)
-  let $ = cheerio.load(html, {
-    decodeEntities: false
-  })
-
-
-  let updateRecordElement = $('#updateRecord')
-  let updateRecordTable = updateRecordElement.find('table')
-  for (let index = 0; index < document.changeLogs.length; index++) {
-    let changeLog = document.changeLogs[index]
-      // updateRecordTable.append('<tr><td><p class="blog-post-meta">' + changeLog.date + '</p></td><td>' + changeLog.operator + '</td><td colspan=2><a href="#' + changeLog.relatedAPI + '"><p>' + changeLog.comment + '</p></a></td>')
-  }
-
-
-  let descriptionElement = $('#description')
-  descriptionElement.append('<p>' + document.description + '</p>')
-
-  let apisDiv = $('#apis')
-  for (let index = 0; index < document.apis.length; index++) {
-    let api = document.apis[index]
-  }
-
-  return $.html()
 }
 
 /**
