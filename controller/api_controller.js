@@ -1,6 +1,7 @@
 'use strict'
 
-const client = require('../utils/redis_client.js')
+const redis = require('redis')
+const client = redis.createClient()
 const assert = require('assert')
 const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
@@ -101,20 +102,24 @@ function getAPIIndexByName(error, request, response, apis, apiName) {
   }
 }
 
-exports.getDocument = function (request, response, documentId) {
+function getDocument(documentId) {
+  return new Promise((resolve, reject) => {
+    redisClient.get(documentId, (err, document) => {
+      if (err) reject(err)
+      return resolve(document)
+    })
+  })
+}
+
+exports.getDocument = async function (request, response, documentId) {
   let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
-  client.get(documentId, (err, document) => {
-    // console.log(documentId + " ←documentId\n")
-    if (document) {
-      fs.writeFile(dirPath, document, function (err) {
-        if (err) {
-          return console.error(err)
-        }
-        // console.log(document + "\n数据写入成功！")
-      })
+  let document = getDocument(documentId)
+  fs.writeFile(dirPath, document, function (err) {
+    if (err) {
+      return console.error(err)
     }
   })
-  return dirPath
+  return document
 }
 
 exports.getChangeLogByDocument = function (request, response, documentId) {

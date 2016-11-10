@@ -14,6 +14,9 @@
         "morgan": "~1.7.0",
         "find-root": "latest"
     },
+    "devDependencies": {
+        "babel-preset-latest": "latest"
+    },
     "license": "MIT",
     "repository": {
         "type": "git",

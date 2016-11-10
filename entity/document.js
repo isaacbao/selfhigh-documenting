@@ -17,5 +17,5 @@ class Document {
     this.description = description
     this.name = name
   }
-  module.exports = Document
-  s = Document
+}
+module.exports = Document

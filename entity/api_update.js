@@ -12,3 +12,5 @@ class Update {
     this.operator = operator
   }
 }
+
+module.exports = Update
