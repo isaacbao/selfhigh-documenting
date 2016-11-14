@@ -7,6 +7,8 @@ const newAPI = require('./data/newAPI.json')
 const generator = require('../controller/html_generator_controller.js')
 const fileUtil = require('../utils/file_util.js')
 const cheerio = require('cheerio')
+const async = require('asyncawait/async')
+const Await = require('asyncawait/await')
 
 let documentId = 'DJWYrja5'
 
@@ -18,25 +20,14 @@ function testAddApi() {
   apiController.addAPI(null, null, null, newAPI, documentId)
 }
 
-function testGetDocument() {
-  apiController.getDocument(documentId)
-}
-
-function testGenerateHtml() {
-  console.log('get document from redis')
-  let documentPath = apiController.getDocument(documentId)
-
-  console.log('try read document')
-  let document = JSON.parse(fs.readFileSync(documentPath, 'utf-8'))
-
-  console.log('try generate')
-  let documentHtml = generator.generate(document, null)
-  fs.writeFileSync('output/' + document.name + '.html', documentHtml, 'UTF-8')
-}
+let testGetDocument = async(function () {
+  let document = Await(apiController.getDocument(documentId))
+  console.log(document)
+})
 
 // console.log('create document')
 // testCreateDocument()
-console.log('add api')
-testAddApi()
-
-// testGenerateHtml()
+// console.log('add api')
+// testAddApi()
+testGetDocument()
+  // testGenerateHtml()
