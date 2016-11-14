@@ -4,7 +4,6 @@
     "description": "A light website using express for RESTFUL API documenting",
     "author": "Lou (dananad@126.com)",
     "dependencies": {
-        "async": "^2.0.1",
         "express": "~4.0.0",
         "redis": "~2.0.0",
         "cheerio": "~0.22.0",
@@ -12,10 +11,8 @@
         "jade": "latest",
         "log4js": "^0.6.38",
         "morgan": "~1.7.0",
+        "asyncawait": "latest",
         "find-root": "latest"
-    },
-    "devDependencies": {
-        "babel-preset-latest": "latest"
     },
     "license": "MIT",
     "repository": {

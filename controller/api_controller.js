@@ -5,11 +5,14 @@ const client = redis.createClient()
 const assert = require('assert')
 const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
+const Group = require('../entity/group.js')
 const fs = require('fs')
 const fileUtil = require('../utils/file_util.js')
 
 const log4js = require('../utils/logger.js')
 const logger = log4js.getLogger('api_controller')
+const async = require('asyncawait/async')
+const Await = require('asyncawait/await')
 
 client.on('error', (err) => {
   logger.error(err)
@@ -111,7 +114,7 @@ function getDocument(documentId) {
   })
 }
 
-exports.getDocument = async function (request, response, documentId) {
+exports.getDocument = async(function (request, response, documentId) {
   let dirPath = fileUtil.root + '/test/output/success-getDocument.json';
   let document = getDocument(documentId)
   fs.writeFile(dirPath, document, function (err) {
@@ -120,7 +123,7 @@ exports.getDocument = async function (request, response, documentId) {
     }
   })
   return document
-}
+})
 
 exports.getChangeLogByDocument = function (request, response, documentId) {
   client.hgetall(documentId + 'changeLog', (err, reply) => {
@@ -134,7 +137,7 @@ function generateChangeLog(api) {
     return new Error('接口更新记录异常')
   }
   let update = getLastUpdate(api)
-  let log = new ChangeLog.ChangeLog(new Date(), update.operator, update.comment, api.name)
+  let log = new ChangeLog(new Date(), update.operator, update.comment, api.id)
   console.log('changelog' + JSON.stringify(log))
   return log
 }
@@ -147,10 +150,11 @@ function getLastUpdate(api) {
   let updates = api.updates
   updates.sort(ChangeLog.sortByDate)
   let lastUpdate = updates[0]
-  for (let i = 0; i < updates.length; i++) {
-    if (lastUpdate.updateTime < update.updateTime) {
-      lastUpdate = update
-    }
-  }
+    // for (let i = 0; i < updates.length; i++) {
+    //   let update = updates[i]
+    //   if (lastUpdate.updateTime < update.updateTime) {
+    //     lastUpdate = update
+    //   }
+    // }
   return lastUpdate
 }

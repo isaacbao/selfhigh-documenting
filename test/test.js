@@ -11,11 +11,11 @@ const cheerio = require('cheerio')
 let documentId = 'DJWYrja5'
 
 function testCreateDocument() {
-  apiController.createDocument(documentId, originDocument)
+  apiController.createDocument(null, null, null, documentId, originDocument)
 }
 
 function testAddApi() {
-  apiController.addAPI(newAPI, documentId)
+  apiController.addAPI(null, null, null, newAPI, documentId)
 }
 
 function testGetDocument() {
@@ -34,9 +34,9 @@ function testGenerateHtml() {
   fs.writeFileSync('output/' + document.name + '.html', documentHtml, 'UTF-8')
 }
 
-console.log('create document')
-testCreateDocument()
-  // console.log('add api')
-  // testAddApi()
+// console.log('create document')
+// testCreateDocument()
+console.log('add api')
+testAddApi()
 
 // testGenerateHtml()

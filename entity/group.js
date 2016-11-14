@@ -1,5 +1,5 @@
 'use strict'
-class group {
+class Group {
   /**
    * [接口组别]
    * @param {[String]} name         [组别名称，必填，非空，同一个文档中不允许存在同名接口]
@@ -11,3 +11,5 @@ class group {
     this.apis = apis
   }
 }
+
+module.exports = Group
