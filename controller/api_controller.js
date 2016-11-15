@@ -1,7 +1,7 @@
 'use strict'
 
 const redis = require('redis')
-const redisClient = redis.createClient()
+  // const redisClient = redis.createClient()
 const assert = require('assert')
 const ChangeLog = require('../entity/change_log.js')
   // const Document = require('../entity/document.js')
@@ -13,10 +13,6 @@ const log4js = require('../utils/logger.js')
 const logger = log4js.getLogger('api_controller')
 const async = require('asyncawait/async')
 const Await = require('asyncawait/await')
-
-redisClient.on('error', (err) => {
-  logger.error(err)
-})
 
 /**
  *
@@ -105,7 +101,7 @@ function getAPIIndexByName(error, request, response, apis, apiName) {
   }
 }
 
-exports.getDocument = function (documentId) {
+let getDocumentById = function (redisClient, documentId) {
   return new Promise((resolve, reject) => {
     redisClient.get(documentId, (err, document) => {
       if (err) reject(err)
@@ -113,17 +109,6 @@ exports.getDocument = function (documentId) {
     })
   })
 }
-
-// exports.getDocument = async(function (request, response, documentId) {
-//   let dirPath = fileUtil.root + '/test/output/success-getDocument.json'
-//   let document = Await(getDocumentPromise(documentId))
-//   fs.writeFile(dirPath, document, function (err) {
-//     if (err) {
-//       return console.error(err)
-//     }
-//   })
-//   return document
-// })
 
 exports.getChangeLogByDocument = function (request, response, documentId) {
   client.hgetall(documentId + 'changeLog', (err, reply) => {
@@ -158,3 +143,10 @@ function getLastUpdate(api) {
     // }
   return lastUpdate
 }
+
+let getDocument = async(function (request, response, documentId) {
+  let document = Await(getDocumentById(request.locals.redisClient, documentId))
+  console.log(document)
+})
+
+exports.getDocument = getDocument

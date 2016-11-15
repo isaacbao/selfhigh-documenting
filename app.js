@@ -11,6 +11,8 @@ const log4js = require('./utils/logger')
 const logger = log4js.getLogger('app')
 const selfhighDocument = require('./selfhigh_document')
 
+app.set('view engine', 'jade')
+app.set('views', './repository/jade')
 app.locals.redisClient = redis.createClient()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -43,5 +45,5 @@ app.use('/selfhighDocument/V0', log4js.connectLogger(logger, {
 app.use('/selfhighDocument/V0', selfhighDocument)
 
 app.listen(3000, function () {
-  console.log('Talent-Collection started on port 3000!')
+  console.log('Selfhigh Document started on port 3000!')
 })

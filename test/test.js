@@ -20,10 +20,9 @@ function testAddApi() {
   apiController.addAPI(null, null, null, newAPI, documentId)
 }
 
-let testGetDocument = async(function () {
-  let document = Await(apiController.getDocument(documentId))
-  console.log(document)
-})
+let testGetDocument = function () {
+  apiController.getDocument(documentId)
+}
 
 // console.log('create document')
 // testCreateDocument()
