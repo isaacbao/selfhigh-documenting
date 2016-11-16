@@ -5,7 +5,7 @@ log4js.configure({
     type: 'console'
   }, {
     type: 'dateFile',
-    filename: '../logs/debug.log',
+    filename: 'G:/github_repository/selfhigh-documenting/logs/debug.log',
     pattern: '-yyyy-MM-dd.log',
     alwaysIncludePattern: true
   }, {
@@ -13,7 +13,7 @@ log4js.configure({
     level: 'ERROR',
     appender: {
       type: 'file',
-      filename: '../logs/errors.log'
+      filename: 'G:/github_repository/selfhigh-documenting/logs/errors.log'
     }
 
   }]

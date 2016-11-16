@@ -144,8 +144,8 @@ function getLastUpdate(api) {
   return lastUpdate
 }
 
-let getDocument = async(function (request, response, documentId) {
-  let document = Await(getDocumentById(request.locals.redisClient, documentId))
+let getDocument = async(function (request, response) {
+  let document = Await(getDocumentById(request.app.locals.redisClient, request.body.documentId))
   console.log(document)
 })
 
