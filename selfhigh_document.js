@@ -9,6 +9,6 @@ const htmlGenerator = require('./controllers/html_generator_controller')
 const auth = require('./middlewares/auth')
 const router = express.Router()
 
-router.post('/getDocument', auth, apiController.getDocument)
+router.get('/getDocument', auth, apiController.getDocument)
 
 module.exports = router

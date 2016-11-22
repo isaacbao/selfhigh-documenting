@@ -38,7 +38,10 @@ exports.updateDocument = function (error, request, response, documentId, name, d
 /**
  *
  */
-exports.addAPI = function (error, request, response, api, documentId) {
+exports.addAPI = function (request, response) {
+  let api = request.body.api
+  let documentId = request.body.documentId
+  let client = request.app.locals.redisClient
   client.get(documentId, (err, document) => {
     if (document) {
       document = JSON.parse(document)
@@ -145,8 +148,14 @@ function getLastUpdate(api) {
 }
 
 let getDocument = async(function (request, response) {
-  let document = Await(getDocumentById(request.app.locals.redisClient, request.body.documentId))
-  console.log(document)
+  let documentId = request.query.documentId
+  console.log("documentId:" + documentId)
+  let document = Await(getDocumentById(request.app.locals.redisClient, documentId))
+  fs.writeFileSync('G:/github_repository/selfhigh-documenting/test/output/documentOutController.json', document)
+  let documentJson = JSON.parse(document)
+  console.log('documentJson:' + documentJson)
+  response.render('template', documentJson)
 })
 
 exports.getDocument = getDocument
+exports.getDocumentById = getDocumentById
