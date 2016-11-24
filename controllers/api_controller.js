@@ -149,11 +149,11 @@ function getLastUpdate(api) {
 
 let getDocument = async(function (request, response) {
   let documentId = request.query.documentId
-  console.log("documentId:" + documentId)
+  logger.info("documentId:" + documentId)
   let document = Await(getDocumentById(request.app.locals.redisClient, documentId))
   fs.writeFileSync('G:/github_repository/selfhigh-documenting/test/output/documentOutController.json', document)
   let documentJson = JSON.parse(document)
-  console.log('documentJson:' + documentJson)
+  logger.info('documentJson:' + documentJson)
   response.render('template', documentJson)
 })
 

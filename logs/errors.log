@@ -2906,3 +2906,184 @@
      stack: [ [Object], [Object] ],
      methods: { get: true } } }
 [2016-11-22 20:58:18.290] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:27:30.438] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-29T12:58:17.771Z,
+     originalMaxAge: 604800000,
+     httpOnly: true } }
+[2016-11-23 20:27:35.129] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:34:11.921] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:27:35.108Z,
+     originalMaxAge: 604800000,
+     httpOnly: true } }
+[2016-11-23 20:34:11.979] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:34:21.121] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:34:11.974Z,
+     originalMaxAge: 604800000,
+     httpOnly: true } }
+[2016-11-23 20:34:21.150] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:34:33.381] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:34:21.144Z,
+     originalMaxAge: 604800000,
+     httpOnly: true } }
+[2016-11-23 20:34:33.408] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:48:29.920] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:34:33.403Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:48:29.955] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:51:51.349] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:48:29.948Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:51:51.393] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:54:05.201] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:51:51.383Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:54:05.238] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:55:43.599] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:54:05.230Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:55:43.657] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:56:35.127] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:55:43.628Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:56:35.156] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-23 20:57:10.150] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:56:35.153Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:57:10.762] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 20:57:11.080] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 20:57:57.299] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:57:11.077Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 20:57:57.408] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 20:57:57.731] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:01.575] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T12:57:57.728Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:00:01.681] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:02.163] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:20.240] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:00:02.160Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:00:20.358] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:20.578] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:22.707] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:00:20.576Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:00:22.837] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:23.019] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:24.730] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:00:23.016Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:00:24.841] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:00:25.046] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:02:00.870] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:00:25.042Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:02:02.500] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:02:02.699] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:02:41.940] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:02:02.693Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:02:42.107] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:02:42.427] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-23 21:02:59.592] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:02:42.422Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-23 21:03:00.743] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-24 19:24:04.904] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-11-30T13:02:02.693Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-24 19:24:09.153] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2016-11-24 19:31:53.371] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-12-01T11:24:09.134Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2016-11-24 19:31:55.201] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:31:55.586] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:41:00.187] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-12-01T11:31:55.583Z,
+     originalMaxAge: 604799998,
+     httpOnly: true } }
+[2016-11-24 19:41:01.626] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:41:02.037] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:41:44.897] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-12-01T11:41:02.032Z,
+     originalMaxAge: 604799998,
+     httpOnly: true } }
+[2016-11-24 19:41:45.077] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:41:45.374] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:46:42.200] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-12-01T11:41:45.367Z,
+     originalMaxAge: 604799998,
+     httpOnly: true } }
+[2016-11-24 19:46:43.957] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:46:44.204] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:48:19.113] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2016-12-01T11:46:44.199Z,
+     originalMaxAge: 604799998,
+     httpOnly: true } }
+[2016-11-24 19:48:20.712] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2016-11-24 19:48:21.007] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
