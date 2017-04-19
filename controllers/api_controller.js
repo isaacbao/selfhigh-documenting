@@ -154,6 +154,11 @@ let getDocument = async(function (request, response) {
   fs.writeFileSync('G:/github_repository/selfhigh-documenting/test/output/documentOutController.json', document)
   let documentJson = JSON.parse(document)
   logger.info('documentJson:' + documentJson)
+  for (let i = 0; i < documentJson.changeLogs.length; i++) {
+    logger.info(documentJson.changeLogs[i].date)
+    documentJson.changeLogs[i].date = documentJson.changeLogs[i].date
+      .slice(0, 10)
+  }
   response.render('template', documentJson)
 })
 

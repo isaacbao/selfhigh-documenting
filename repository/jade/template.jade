@@ -16,42 +16,43 @@ html
         link(href='http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet')
         link(href='css/base.css', rel='stylesheet')
         script.
-            $(function() {
-            $(".accordion").accordion({
-            collapsible: true
+            $(function () {
+                $(".accordion").accordion({
+                    collapsible: true
+                });
             });
-            });
-            $(function() {
-            $(".accordion_close").accordion({
-            active: false,
-            collapsible: true
-            });
+            $(function () {
+                $(".accordion_close").accordion({
+                    active: false,
+                    collapsible: true
+                });
             });
     body
         .container-fluid
             .row
                 .col-sm-3.col-md-2.sidebar
                     ul#apiNav.nav.nav-sidebar
-                        // 这里放根据接口大类放li
+                        - each group in groups
+                          li
+                            a(href= group.id)= group.name
                 .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
                     #main.blog-post
                         h1#header.page-header.blog-title 握手网后端接口文档
                         #updateRecord.accordion_close
-                            h3 更新履历：#{name}#{changeLogs}
+                            h3 更新履历：
                             table.table
                                 tr
                                     th Date
                                     th Operator
                                     th(colspan='2') Content
-                                
                                 - each changeLog in changeLogs
                                   tr
-                                      td
-                                          p.blog-post-meta= changeLog.date
-                                      td= changeLog.operator
-                                      td(colspan='2')
-                                          a(href= changeLog.relatedAPI)
-                                              p= changeLog.comment
+                                    td
+                                        p.blog-post-meta= changeLog.date
+                                    td= changeLog.operator
+                                    td(colspan='2')
+                                        a(href= changeLog.relatedAPI)
+                                            p= changeLog.comment
                         //- hr
                         //- #lastUpdate
                         //-     h3 最近更新：
