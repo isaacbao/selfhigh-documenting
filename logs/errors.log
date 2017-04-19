@@ -3289,3 +3289,21 @@
      originalMaxAge: 604799999,
      httpOnly: true } }
 [2017-04-19 20:26:09.808] [ERROR] app - GET /selfhighDocument/V0/css/base.css 404
+[2017-04-19 20:32:03.519] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-26T12:26:09.734Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-19 20:53:46.043] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-26T12:32:04.204Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-19 20:55:29.585] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-26T12:53:47.694Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }

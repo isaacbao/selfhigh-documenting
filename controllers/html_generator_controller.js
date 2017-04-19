@@ -19,5 +19,5 @@ exports.generate = function (error, request, response, document, theme) {
  * @return {[type]}              [description]
  */
 function getTemplate(theme) {
-  return fs.readFileSync('../repository/template.html', 'utf-8')
+  return fs.readFileSync('../views/template.html', 'utf-8')
 }

@@ -12,7 +12,8 @@ const logger = log4js.getLogger('app')
 const selfhighDocument = require('./selfhigh_document')
 
 app.set('view engine', 'jade')
-app.set('views', './repository/jade')
+app.set('views', './views/')
+app.use('/public', express.static('public'));
 app.locals.redisClient = redis.createClient()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
