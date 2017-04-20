@@ -33,8 +33,8 @@ html
                 .col-sm-3.col-md-2.sidebar
                     ul#apiNav.nav.nav-sidebar
                         - each group in groups
-                          li
-                            a(href= group.id)= group.name
+                            li
+                                a(href= group.id)= group.name
                 .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
                     #main.blog-post
                         h1#header.page-header.blog-title 握手网后端接口文档
@@ -46,44 +46,43 @@ html
                                     th Operator
                                     th(colspan='2') Content
                                 - each changeLog in changeLogs
-                                  tr
+                                    tr
+                                        td
+                                            p.blog-post-meta= changeLog.date
+                                        td= changeLog.operator
+                                        td(colspan='2')
+                                            a(href= changeLog.relatedAPI)
+                                                p= changeLog.comment
+                        hr
+                        #lastUpdate.accordion_close
+                            h3 最近更新：（点击content中的内容可以直接传送到更新的位置）
+                            table.table
+                                tr
+                                    th Date
+                                    th Operator
+                                    th(colspan='2') Content
+                                tr
                                     td
-                                        p.blog-post-meta= changeLog.date
-                                    td= changeLog.operator
-                                    td(colspan='2')
-                                        a(href= changeLog.relatedAPI)
-                                            p= changeLog.comment
-                        //- hr
-                        //- #lastUpdate
-                        //-     h3 最近更新：
-                        //-         b （点击content中的内容可以直接传送到更新的位置）
-                        //-     table.table
-                        //-         tr
-                        //-             th Date
-                        //-             th Operator
-                        //-             th(colspan='2') Content
-                        //-         tr
-                        //-             td
-                        //-                 p.blog-post-meta=#{changeLogs[0].date}
-                        //-             td={#lastUpdate.operator}
-                        //-             td
-                        //-                 a(href=#{changeLogs[0].relatedAPI})
-                        //-                     p=#{changeLogs[0].comment}
-                        //- hr
-                        //- h2#description.blog-post-title 说明
-                        //- hr
-                        //- #apis
-                        //- each group,groupIndex in #{document.groups}
-                        //-     h2.blog-post-title
-                        //-         span#group.id = group.name
-                        //- 		each api,apiIndex in  group
-                        //-       h3#api.id = api.name
-                        //- 			p.blog-post-meta = api.addDate 新增
-                        //- 			p = api.url
-                        //- 			p = 返回值 : api.responseData
-                        //- 			div.accordion
-                        //- 			  h3=参数示例：
-                        //- 				pre
-                        //- 				  code
-                        //- 					  api.params
-                        //- 			hr
+                                        p.blog-post-meta= changeLogs[0].date
+                                    td= changeLogs[0].operator
+                                    td
+                                        a(href=changeLogs[0].relatedAPI)
+                                            p=changeLogs[0].comment
+                        hr
+                        h2#description.blog-post-title 说明
+                        hr
+                        #apis
+                        - each group in groups
+                            h2.blog-post-title
+                                span#group=group.name
+                                each api in group
+                                    h3#api=api.name
+                                        p.blog-post-meta=api.addDate+' 新增'
+                                    p=api.url
+                                    p='返回值:'+api.responseData
+                                    div.accordion
+                                        h3 参数示例：
+                                        pre
+                                            code
+                                                api.params
+                                    hr

@@ -3307,3 +3307,151 @@
      _expires: 2017-04-26T12:53:47.694Z,
      originalMaxAge: 604799999,
      httpOnly: true } }
+[2017-04-20 19:26:00.849] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-26T12:55:30.048Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 19:26:07.202] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2017-04-20 19:36:36.468] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T11:26:07.136Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 19:36:37.273] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2017-04-20 19:38:05.296] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T11:36:37.224Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:04:02.670] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:02.632Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:04:06.581] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2017-04-20 20:16:42.605] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:17:36.639] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:18:46.664] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:21:14.600] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:22:49.984] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:24:23.142] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:25:11.897] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:25:59.168] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:26:39.869] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:27:21.067] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:27:28.365] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:28:18.838] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:29:21.003] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:30:13.891] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:31:48.370] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:04:06.566Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:32:41.780] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:31:49.853Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:35:54.661] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:32:42.035Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:35:54.722] [ERROR] app - GET /selfhighDocument/V0/getDocument?documentId=DJWYrja5 500
+[2017-04-20 20:36:08.956] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:35:54.708Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:37:20.675] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:36:09.494Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
+[2017-04-20 20:37:38.396] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-04-27T12:37:21.116Z,
+     originalMaxAge: 604799999,
+     httpOnly: true } }
