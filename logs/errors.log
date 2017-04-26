@@ -3455,3 +3455,9 @@
      _expires: 2017-04-27T12:37:21.116Z,
      originalMaxAge: 604799999,
      httpOnly: true } }
+[2017-04-24 16:52:13.351] [ERROR] auth - Session {
+  cookie: 
+   { path: '/selfhighDocument/V0',
+     _expires: 2017-05-01T08:52:13.344Z,
+     originalMaxAge: 604800000,
+     httpOnly: true } }

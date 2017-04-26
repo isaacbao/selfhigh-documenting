@@ -19,9 +19,14 @@
         "log4js": "^0.6.38",
         "morgan": "~1.7.0",
         "asyncawait": "latest",
-        "find-root": "latest"
+        "find-root": "latest",
+        "electron": "~1.6.2"
     },
     "license": "MIT",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/isaacbao/selfhigh-documenting/.git"
