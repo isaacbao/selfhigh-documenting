@@ -1,75 +1,79 @@
-const electron = require('electron')
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-const Menu = electron.Menu;
-
+//native客户端的入口
+const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+// Environment
+global.ROOT = __dirname
+global.EXECROOT = path.join(process.execPath, '..')
+global.MODULE_PATH = path.join(global.ROOT, "node_modules")
+
 let mainWindow
 
-const menuTemplate = [
-    // {
-    //     label: 'Electron',
-    //     submenu: [
-    //         {
-    //             label: 'About ...',
-    //             click: () => {
-    //                 console.log('About Clicked');
-    //             }
-    //         }
-    //     ]
-    // }
-];
+const menuTemplate = [];
 
-function createWindow () {
-    mainWindow = new BrowserWindow({width: 800, height: 600})
+function createWindow() {
+    const {screen} = require('electron')
+    const {workArea} = screen.getPrimaryDisplay()
+    // let {x, y, width, height} = config.get('poi.window', workArea)
+    // const validate = (n, min, range) => (n != null && n >= min && n < min + range)
+    // const withinDisplay = (d) => {
+    //     const wa = d.workArea
+    //     return validate(x, wa.x, wa.width) && validate(y, wa.y, wa.height)
+    // }
+    // if (!screen.getAllDisplays().some(withinDisplay)) {
+        x = workArea.x
+        y = workArea.y
+    // }
+    // if (width == null) {
+        width = workArea.width
+    // }
+    // if (height == null) {
+        height = workArea.height
+    // }
+
+    mainWindow = new BrowserWindow({
+        x: x,
+        y: y,
+        width: width,
+        height: height,
+        title: 'selfhigh',
+        // icon: poiIconPath,
+        // resizable: config.get('poi.content.resizeable', true),
+        // alwaysOnTop: config.get('poi.content.alwaysOnTop', false),
+        titleBarStyle: 'hidden',
+        enableLargerThanScreen: true,
+        webPreferences: {
+            plugins: true,
+        }
+    })
     const menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
-    // and load the index.html of the app.
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname+'/public', 'index.html'),
+        pathname: path.join(global.ROOT + '/public', 'index.html'),
         protocol: 'file:',
         slashes: true
     }))
 
-    // Open the DevTools.
+
     // mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
         mainWindow = null
     })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 
-// Quit when all windows are closed.
 app.on('window-all-closed', function () {
-    // On OS X it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== 'darwin') {
         app.quit()
     }
 })
 
 app.on('activate', function () {
-    // On OS X it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
         createWindow()
     }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
