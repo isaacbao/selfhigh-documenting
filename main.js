@@ -45,7 +45,8 @@ function createWindow() {
         enableLargerThanScreen: true,
         webPreferences: {
             plugins: true,
-        }
+        },
+        darkTheme: true
     })
     const menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
