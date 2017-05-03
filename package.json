@@ -20,7 +20,27 @@
         "morgan": "~1.7.0",
         "asyncawait": "latest",
         "find-root": "latest",
-        "electron": "~1.6.2"
+        "babel-core": "^6.23.1",
+        "babel-plugin-add-module-exports": "^0.2.1",
+        "babel-preset-es2017-node7": "^0.5.2",
+        "babel-preset-react": "^6.23.0",
+        "babel-preset-stage-0": "^6.22.0",
+        "babel-register": "^6.23.0",
+        "bluebird": "^3.4.0",
+        "bootstrap": "^3.3.7"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.0.0",
+        "electron": "~1.6.2",
+        "electron-builder": "^16.6.1",
+        "electron-builder-squirrel-windows": "^16.6.0",
+        "eslint": "^3.2.2",
+        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-react": "^6.3.0",
+        "git-archive": "^0.1.4",
+        "gulp": "^3.9.1",
+        "mocha": "^3.0.1",
+        "mocha-lcov-reporter": "^1.0.0"
     },
     "license": "MIT",
     "main": "main.js",

@@ -22,14 +22,14 @@ function createWindow() {
     //     return validate(x, wa.x, wa.width) && validate(y, wa.y, wa.height)
     // }
     // if (!screen.getAllDisplays().some(withinDisplay)) {
-        x = workArea.x
-        y = workArea.y
+    x = workArea.x
+    y = workArea.y
     // }
     // if (width == null) {
-        width = workArea.width
+    width = workArea.width
     // }
     // if (height == null) {
-        height = workArea.height
+    height = workArea.height
     // }
 
     mainWindow = new BrowserWindow({
@@ -46,6 +46,9 @@ function createWindow() {
         webPreferences: {
             plugins: true,
         },
+        type: "textured",
+        backgroundColor :"#FFF",
+        // transparent:true,
         darkTheme: true
     })
     const menu = Menu.buildFromTemplate(menuTemplate);
